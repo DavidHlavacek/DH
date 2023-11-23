@@ -62,7 +62,7 @@ const Contact = () => {
                         opportunities for collaboration and growth! Whether you
                         have a project in mind or just want to connect, I'm
                         eager to hear from you. Feel free to reach out through
-                        the contact form!
+                        the contact form below!
                     </p>
                     <div className="contact-form">
                         <form ref={refForm} onSubmit={sendEmail}> 
