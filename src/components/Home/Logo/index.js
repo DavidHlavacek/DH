@@ -27,7 +27,7 @@ const Logo = () => {
         gsap.fromTo(solidLogoRef.current, {
             opacity: 0,
         }, {
-            opacity: 0.3,
+            opacity: 0.7,
             delay: 4,
             duration: 2,
         })
