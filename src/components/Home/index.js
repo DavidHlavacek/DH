@@ -76,7 +76,7 @@ const Home = () => {
                     </h1>
                     <h2>Fullstack Developer / Freelancer / Software Engineer</h2>
                     <Link to="/contact" className="flat-button">
-                        CONTACT ME test
+                        CONTACT ME
                     </Link>
                 </div>
                 <Logo />
