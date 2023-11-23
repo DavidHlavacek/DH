@@ -4,6 +4,10 @@
     position: absolute;
     left: 80px;
     margin: 0;
+    @media screen and (max-height: 600px), (max-width: 800px) {
+        left: 40px;
+
+    }
 }
 
 .top-tags {

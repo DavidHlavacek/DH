@@ -5,21 +5,32 @@
     position: absolute;
     top: 0;
     z-index: 3;
-    min-height: 500px;
     margin-top: 0; // Ensure no unexpected top margin
-
+    @media screen and (max-width: 800px) {
+            width: 40px;
+    }
     .logo {
         display: block;
         padding: 8px 0;
-
+        
+        @media screen and (max-width: 800px) {
+            padding: 2px 0;
+        }
         img {
             display: block;
             margin: 8px auto;
             width: 60px;
             height: auto;
 
+            @media screen and (max-width: 800px) {
+                width: 30px;
+            }
+
             &.sub-logo {
                 width: 70px;
+                @media screen and (max-width: 800px) {
+                    width: 35px;
+                }
             }
         }
     }
@@ -33,8 +44,9 @@
         margin-top: -200px;
         width: 100%;
         overflow: hidden;
+        
 
-        @media screen and (max-height: 600px) {
+        @media screen and (max-height: 600px), (max-width: 800px) {
             top: 50%;
             margin-top: -165px;
             
@@ -57,7 +69,7 @@
                 height: 30px!important;
                 width: auto;
             }
-            @media screen and (max-height: 600px) {
+            @media screen and (max-height: 600px), (max-width: 800px) {
                 svg {
                     height: 1.3rem!important;
                     width: auto;
@@ -71,7 +83,7 @@
                 height: 3.2rem !important;
                 width: auto;
             }
-            @media screen and (max-height: 600px) {
+            @media screen and (max-height: 600px), (max-width: 800px) {
                 svg {
                     height: 1.6rem!important;
                     width: auto;
@@ -86,7 +98,7 @@
                 height: 2.5rem !important;
                 width: auto;
             }
-            @media screen and (max-height: 600px) {
+            @media screen and (max-height: 600px), (max-width: 800px) {
                 svg {
                     height: 1.3rem!important;
                     width: auto;
@@ -106,7 +118,7 @@
                 margin-top: 15px;
             }
 
-            @media screen and (max-height: 600px) {
+            @media screen and (max-height: 600px), (max-width: 800px) {
                 svg {
                     height: 1.3rem!important;
                     width: auto;
@@ -124,7 +136,7 @@
 
             a {
                 height: 66px;
-                @media screen and (max-height: 600px) {
+                @media screen and (max-height: 600px), (max-width: 800px) {
                     height: 57px;
                 }
             }
@@ -133,7 +145,7 @@
         .top-nav {
             a {
             line-height: 66px;
-            @media screen and (max-height: 600px) {
+            @media screen and (max-height: 600px), (max-width: 800px) {
                 line-height: 50px;
             }
             }
@@ -142,7 +154,7 @@
         .middle-nav {
             a {
                 line-height: 83px;
-                @media screen and (max-height: 600px) {
+                @media screen and (max-height: 600px), (max-width: 800px) {
                     line-height: 65px;
                 }
             }
@@ -151,7 +163,7 @@
         .bot-nav {
             a{
                 line-height: 75px;
-                @media screen and (max-height: 600px) {
+                @media screen and (max-height: 600px), (max-width: 800px) {
                     line-height: 58px;
                     &:last-of-type {
                         line-height: 62px;
@@ -163,7 +175,7 @@
         .contact-nav {
             a {
                 line-height: 72px;
-                @media screen and (max-height: 600px) {
+                @media screen and (max-height: 600px), (max-width: 800px) {
                     line-height: 57px;
                 }
             }
@@ -183,7 +195,7 @@
                 position: relative;
                 text-decoration: none;
 
-                @media screen and (max-height: 600px) {
+                @media screen and (max-height: 600px), (max-width: 800px) {
                     font-size: 10px;
                 }
                 
@@ -244,13 +256,18 @@
                     text-align: center;
                     opacity: 0;
                     transition: all 0.3s ease-out;
+                    @media screen and (max-height: 600px), (max-width: 800px) {
+                        letter-spacing: 0px;
+                        font-size: 6px;
+
+                    }
                 }
 
                 &:first-child {
                     &::after {
                         content: 'HOME';
                         font-weight: 500;
-                        @media screen and (max-height: 600px) {
+                        @media screen and (max-height: 600px), (max-width: 800px) {
                             line-height: 75px;
                         }
                     }
@@ -261,7 +278,7 @@
                 &:after {
                     content: 'ABOUT';
                     font-weight: 500;
-                    @media screen and (max-height: 600px) {
+                    @media screen and (max-height: 600px), (max-width: 800px) {
                         line-height: 75px;
                     }
                 }
@@ -272,7 +289,7 @@
                     content: 'SERVICES';
                     margin-left: 0.5px;
                     font-weight: 500;
-                    @media screen and (max-height: 600px) {
+                    @media screen and (max-height: 600px), (max-width: 800px) {
                         line-height: 66px;
                     }
                 }
