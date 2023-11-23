@@ -1,7 +1,7 @@
 {
+  "homepage": "http://DavidHlavacek.github.io/DH",
   "name": "react-portfolio",
   "version": "0.1.0",
-  "homepage": "http://DavidHlavacek.github.io/DH",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
