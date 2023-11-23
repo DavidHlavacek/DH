@@ -14,7 +14,7 @@ const Logo = () => {
         gsap.timeline()
         .to(bgRef.current, {
             duration: 1,
-            opacity: 1,
+            opacity: 0,
         })
        
         
