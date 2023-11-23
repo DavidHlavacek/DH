@@ -76,7 +76,7 @@ const Sidebar = () => (
             </div>
         </nav>
         <ul>
-            <li>
+            <li key="linkedin">
                 <a
                     target="_blank"
                     rel="noreferrer"
@@ -85,7 +85,7 @@ const Sidebar = () => (
                     <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
                 </a>
             </li>
-            <li>
+            <li key="github">
                 <a
                     target="_blank"
                     rel="noreferrer"

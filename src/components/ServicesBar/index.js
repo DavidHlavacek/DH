@@ -66,7 +66,7 @@ const ServicesBar = ({ showPage, setShowPage }) => {
                                 <p>{`${
                                     index === 0 ? page : page.charAt(0).toUpperCase() + page.slice(1)
                                 }${index === 0 ? '.js' : ''}`}</p>
-                                <div
+                                <div key={page}
                                     className="x-button"
                                     onClick={(e) =>
                                         handleTabCloseClick(e, page)

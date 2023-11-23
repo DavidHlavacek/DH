@@ -12,11 +12,6 @@
         transform-style: preserve-3d;
         animation: fadeIn 1s forwards;
         animation-delay: 1s;
-
-        @media screen and (max-width: 1140px) {
-            width: 75%;
-            
-        }
     }
 
     
@@ -57,6 +52,7 @@
                 @media screen and (max-width: 1140px) {
                     font-size: 33px;
                     left: 2%;
+                    margin-bottom: 5px;
                 }
 
                 // &::before {
@@ -101,18 +97,23 @@
 
                 @media screen and (max-width: 1140px) {
                     font-size: 15px;
-                    margin-left: 10px;
+                    // margin-left: 10px;
                 }
+                
                 opacity: 0;
                 font-size: 18px;
                 color: #fff;
                 font-family: 'Cascadia';
                 font-weight: 300;
-                min-width: fit-content;
+                
                 animation: fadeInUp 1s 1.5s;
                 animation-fill-mode: forwards;
-                margin-right: 50px;
-                margin-bottom: 0px;
+                margin-right: 20px;
+
+                @media screen and (max-width: 800px) {
+                    width: 50%;
+                    margin-bottom: -1px;
+                }
 
                 @for $i from 1 through 20 {
                     $delay: 1.5s + 0.1s * ($i - 2);
