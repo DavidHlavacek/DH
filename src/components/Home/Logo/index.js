@@ -14,14 +14,20 @@ const Logo = () => {
         gsap.timeline()
         .to(bgRef.current, {
             duration: 1,
-            opacity: 0,
+            opacity: 1,
         })
-       
+        .fromTo(outlineLogoRef.current, {
+            opacity: 1,
+        }, {
+            opacity: 0,
+            delay: 2,
+            duration: 2,
+        })
         
         gsap.fromTo(solidLogoRef.current, {
             opacity: 0,
         }, {
-            opacity: 0.6,
+            opacity: 0.3,
             delay: 4,
             duration: 2,
         })
