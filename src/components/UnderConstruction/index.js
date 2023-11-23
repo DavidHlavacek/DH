@@ -7,6 +7,7 @@ import GithubIcon from '../../assets/icons/github.png'
 import LinkedinIcon from '../../assets/icons/linkedin.png'
 import GmailIcon from '../../assets/icons/gmail.png'
 import GoogleIcon from '../../assets/icons/google.png'
+import CV from '../../assets/cv.pdf'
 
 
 
@@ -54,7 +55,10 @@ const UnderConstructionPage = () => (
         image: GoogleIcon,
       },
     ]}
-  />
+    />
+
+   <a href={CV} download="CV"><button class="flat-button">Download Curriculum Vitae</button></a>
+
   </div>
 );
 
