@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 const Main = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
-    const pageTitleString = "Software  Development  Services";
+    const pageTitleString = "Software Development Services";
     const pageTitle = pageTitleString.split('');
 
 

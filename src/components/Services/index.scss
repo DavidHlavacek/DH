@@ -12,6 +12,11 @@
         transform-style: preserve-3d;
         animation: fadeIn 1s forwards;
         animation-delay: 1s;
+
+        @media screen and (max-width: 1140px) {
+            width: 75%;
+            
+        }
     }
 
     
@@ -50,8 +55,8 @@
                 
 
                 @media screen and (max-width: 1140px) {
-                    font-size: 35px;
-                    left: 5%;
+                    font-size: 33px;
+                    left: 2%;
                 }
 
                 // &::before {
@@ -109,7 +114,7 @@
                 margin-right: 50px;
 
                 @for $i from 1 through 20 {
-                    $delay: 1.5s + 0.5s * ($i - 2);
+                    $delay: 1.5s + 0.1s * ($i - 2);
                     &:nth-of-type(#{$i}) {
                         animation-delay: #{$delay};
                     }
@@ -136,7 +141,12 @@
             left: 10%;
         }
 
-  
+        
+        h1 {
+            @media screen and (max-width: 1140px) {
+                font-size: 38px;
+            }
+        }
         
   
         p {
@@ -148,6 +158,24 @@
   
             
         }
+    }
+  
+    
+  }
+  
+  
+.services-softwaredev {
+    .text-zone {
+      
+        
+        
+        h1 {
+            @media screen and (max-width: 1140px) {
+                font-size: 24px;
+            }
+        }
+        
+  
     }
   
     
