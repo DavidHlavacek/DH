@@ -195,6 +195,15 @@
                 position: relative;
                 text-decoration: none;
 
+                svg {
+                    .path1 {
+                        fill: #4d4d4e;
+                    }
+                    .path2 {
+                        fill: #4d4d4e;
+                    }
+                }
+
                 @media screen and (max-height: 600px), (max-width: 800px) {
                     font-size: 10px;
                 }
@@ -322,6 +331,12 @@
                 svg {
                     color: #ffd700;
                     fill: #ffd700;
+                    .path1 {
+                        fill: #E65100;
+                    }
+                    .path2 {
+                        fill: #FFA000;
+                    }
                 }
             }
         }
