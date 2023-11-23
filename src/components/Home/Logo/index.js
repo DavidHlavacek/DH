@@ -10,23 +10,19 @@ const Logo = () => {
     const solidLogoRef = useRef()
 
     useEffect(() => {
-        gsap.registerPlugin(DrawSVGPlugin)
+        gsap.registerPlugin()
 
         gsap.timeline()
         .to(bgRef.current, {
             duration: 1,
             opacity: 1,
         })
-        .from(outlineLogoRef.current, {
-            drawSVG: 0,
-            duration: 20,
-            opacity: 0.2,
-        })
+       
         
         gsap.fromTo(solidLogoRef.current, {
             opacity: 0,
         }, {
-            opacity: 0.3,
+            opacity: 0.6,
             delay: 4,
             duration: 2,
         })
