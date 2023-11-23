@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/DH/static/css/main.35ffc597.css",
+    "main.js": "/DH/static/js/main.e32b7eb2.js",
+    "static/js/787.cf482a7c.chunk.js": "/DH/static/js/787.cf482a7c.chunk.js",
+    "static/media/Hack-Bold.ttf": "/DH/static/media/Hack-Bold.d34bf8455d60ea80189e.ttf",
+    "static/media/Hack-Regular.ttf": "/DH/static/media/Hack-Regular.f2412cb7f3af2d1a6db0.ttf",
+    "static/media/Cascadia.ttf": "/DH/static/media/Cascadia.bd7ac0c7c5582313a197.ttf",
+    "static/media/github.png": "/DH/static/media/github.f3d873d71aa989badfd2.png",
+    "static/media/softwaredev.png": "/DH/static/media/softwaredev.c733fee62854f77f1ce4.png",
+    "static/media/helvetica-neu.ttf": "/DH/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
+    "static/media/google.png": "/DH/static/media/google.1ea9198051156328c1f1.png",
+    "static/media/linkedin.png": "/DH/static/media/linkedin.d21b834035baa551e886.png",
+    "static/media/projects.png": "/DH/static/media/projects.441996406912d4f56b72.png",
+    "static/media/LaBelleAurore.woff2": "/DH/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
+    "static/media/gmail.png": "/DH/static/media/gmail.a2f2146f929409405da0.png",
+    "static/media/webdev2.png": "/DH/static/media/webdev2.6f54dfd4d14347b801b0.png",
+    "static/media/logo.png": "/DH/static/media/logo.ab26007c716f2385bfc5.png",
+    "static/media/CoolveticaRg-Regular.woff2": "/DH/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
+    "index.html": "/DH/index.html",
+    "main.35ffc597.css.map": "/DH/static/css/main.35ffc597.css.map",
+    "main.e32b7eb2.js.map": "/DH/static/js/main.e32b7eb2.js.map",
+    "787.cf482a7c.chunk.js.map": "/DH/static/js/787.cf482a7c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35ffc597.css",
+    "static/js/main.e32b7eb2.js"
+  ]
+}
