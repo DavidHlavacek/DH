@@ -42,7 +42,7 @@ const Main = () => {
                     <AnimatedLetters
                         letterClass={letterClass}
                         strArray={pageTitle}
-                        idx={5}
+                        idx={1}
                     />
                 </h1>
                 <p>Hi, there!</p>

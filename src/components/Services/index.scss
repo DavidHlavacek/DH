@@ -1,6 +1,6 @@
 
     .services-container {
-        width: 100%;
+        width: 80%;
         will-change: contents;
         height: 90%;
         min-height: 566px;
@@ -25,16 +25,20 @@
             top: 5%;
             width: 100%;
             vertical-align: middle;
-            height: 400px; /* Set a fixed height for the container */
+            height: 70%; /* Set a fixed height for the container */
             z-index: 1;
-
+            
             // @media screen and (min-width: 1000px) {
             //     left: 9%;
                 
             // }
 
+            @media screen and (max-width: 1140px) {
+                top: 0px;
+            }
+
             h1 {
-                font-size: 70px;
+                font-size: 65px;
                 font-family: 'Cascadia';
                 color: #ffd700;
                 font-weight: 800;
@@ -42,6 +46,13 @@
                 position: relative;
                 margin-bottom: 20px;
                 left: 0px;
+                
+                
+
+                @media screen and (max-width: 1140px) {
+                    font-size: 35px;
+                    left: 5%;
+                }
 
                 // &::before {
                 //     content: "<h1>";
@@ -72,7 +83,7 @@
                 flex-direction: column; /* Arrange items in a column */
                 flex-wrap: wrap; /* Allow content to wrap to the next column */
                 margin-left: 10px; /* Adjust margin as needed */
-                max-width: 70%; /* Adjust the width as needed */
+                max-width: 100%; /* Adjust the width as needed */
                 max-height: 100%;
 
             }
@@ -82,18 +93,23 @@
                     left: 9%;
                     
                 }
+
+                @media screen and (max-width: 1140px) {
+                    font-size: 15px;
+                    margin-left: 10px;
+                }
                 opacity: 0;
                 font-size: 18px;
                 color: #fff;
                 font-family: 'Cascadia';
                 font-weight: 300;
                 min-width: fit-content;
-                animation: fadeInUp 1s 3s;
+                animation: fadeInUp 1s 1.5s;
                 animation-fill-mode: forwards;
                 margin-right: 50px;
 
                 @for $i from 1 through 20 {
-                    $delay: 3s + 0.5s * ($i - 2);
+                    $delay: 1.5s + 0.5s * ($i - 2);
                     &:nth-of-type(#{$i}) {
                         animation-delay: #{$delay};
                     }
@@ -115,14 +131,20 @@
       
         left: 10%;
         top:  18%;
-     
+        
+        @media screen and (max-width: 1140px) {
+            left: 10%;
+        }
+
   
         
   
         p {
           
             font-size: 30px;
-           
+            @media screen and (max-width: 1140px) {
+                font-size: 15px;
+            }
   
             
         }
