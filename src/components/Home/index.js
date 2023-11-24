@@ -11,26 +11,8 @@ const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const firstNameArray = ['a', 'v', 'i', 'd']
     const lastNameArray = ['l', 'a', 'v', 'a', 'c', 'e', 'k']
-    const jobArray = [
-        's',
-        'o',
-        'f',
-        't',
-        'w',
-        'a',
-        'r',
-        'e',
-        ' ',
-        'e',
-        'n',
-        'g',
-        'i',
-        'n',
-        'e',
-        'e',
-        'r',
-        '.',
-    ]
+    const jobString = "developper";
+    const jobArray = jobString.split('');
 
     useEffect(() => {
         setTimeout(() => {
