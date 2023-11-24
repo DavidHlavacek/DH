@@ -17,6 +17,7 @@
   }
 
   .flat-button {
+    width: 100%;
     color: #ffd700;
     background-color: transparent;
     font-size: 15px;
@@ -27,13 +28,13 @@
     padding: 12px 20px;
     border: 1px solid #ffd700;
     float: left;
-    animation: fadeIn 1s 1.8s backwards;
+    animation: fadeIn 1s 1s backwards;
     white-space: nowrap;
     background: linear-gradient(45deg, #59adeb, #40c3af);
     color: #fff;
-    box-shadow: 0.5em 0.5em 0.2em rgba(0,0,0,0.25);
+    box-shadow: 1em 1em 0.2em rgba(0,0,0,0.25);
     border-radius: 0.2em;
-    transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 1s ease-in-out;
     cursor: pointer;
     margin-top: 30px;
     &:hover {
