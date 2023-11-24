@@ -64,7 +64,7 @@
 
 .about-page,
 .contact-page {
-    width: 50%;
+    width: 70%;
     .text-zone {
         
         position: relative;
@@ -161,4 +161,12 @@
             color: #fff
         }
     }
+}
+
+.about-page {
+    width: 50%;
+    @media screen and (max-height: 600px), (max-width: 800px) {
+        width: 80%; // Adjust as needed for smaller screens
+    }
+    
 }
