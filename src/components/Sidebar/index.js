@@ -26,7 +26,7 @@ const Sidebar = () => {
     };
 
     return (
-        <div className={`nav-bar ${menuOpen ? 'menu-open' : ''}`}>
+        <div className={`nav-bar ${menuOpen ? 'menu-open' : 'menu-closed'}`}>
             <Link className="logo" to="/">
                 <img src={Logo} alt="logo" />
                 <img className="sub-logo" src={LogoSubtitle} alt="David Hlavacek" />

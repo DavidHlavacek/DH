@@ -15,7 +15,8 @@
         
         .burger-menu {
             cursor: pointer;
-            padding: 5px;
+            padding: 0px;
+            padding-bottom: 10px;
             flex: 1;
               display: block;
             //   position: relative;
@@ -63,6 +64,13 @@
             ul {
                 display: none;
               }
+          }
+
+          &:menu-closed {
+            nav {
+                visibility: hidden;
+                display: none;
+            }
           }
 
         .logo {
@@ -146,6 +154,22 @@
             }
 
             .top-nav {
+                &::before {
+                    content: '';
+                    display: block;
+                    margin-bottom: 10px;
+                    width: 80%;
+                    height: 1px;
+                    background-color: #4d4d4e; /* Adjust the color as needed */
+                    // margin-top: 5px; /* Adjust the margin as needed */
+                    position: relative;
+                    left: 50%; /* Position from the center */
+                    transform: translateX(-50%); /* Center the line */
+                    @media screen and (max-height: 600px),
+                    (max-width: 800px) { 
+                        display: none;
+                }
+                }
                 margin-bottom: 23px;
                 margin-top: 15px;
 
@@ -204,7 +228,7 @@
             }
 
             .contact-nav {
-                margin-top: 5px;
+                margin-top: 0px;
 
                 svg {
                     height: 35px !important;
@@ -487,6 +511,9 @@
 
                     svg {
                         height: 25px;
+                        @media screen and (max-width: 800px) {
+                            height: 20px;    
+                        }
                     }
 
                     &:hover svg {
