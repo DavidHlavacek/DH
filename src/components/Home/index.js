@@ -45,12 +45,13 @@ const Home = () => {
                     <h1>
                         <span className='hi-zone'>
                         <span className={letterClass}>H</span>
-                        <span className={`${letterClass} _12`}>i,</span>
+                        <span className={`${letterClass} _11`}>i,</span>
                         </span>
                         <br />
                         <span className='name-zone'>
-                        <span className={`${letterClass} _13`}>I</span>
-                        <span className={`${letterClass} _14`}>'m</span>
+                        <span className={`${letterClass} _12`}>I</span>
+                        <span className={`${letterClass} _13`}>'</span>
+                        <span className={`${letterClass} _14`}>m</span>
                         <img src={LogoTitleD} alt="developer" />
                         <AnimatedLetters
                             letterClass={letterClass}
