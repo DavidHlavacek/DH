@@ -6,19 +6,21 @@
         top: 0;
         z-index: 3;
         margin-top: 0;
-        justify-content: space-between;  // Add this line to push the logo and nav to the top and bottom
-        align-items: center;  // Add this line to center the items horizontally
-        justify-content: center; 
+        justify-content: space-between; // Add this line to push the logo and nav to the top and bottom
+        align-items: center; // Add this line to center the items horizontally
+        justify-content: center;
+
         // Ensure no unexpected top margin
-        @media screen and (max-width: 800px) {
-        }
-        
+        @media screen and (max-width: 800px) {}
+
         .burger-menu {
             cursor: pointer;
             padding: 0px;
             padding-bottom: 10px;
             flex: 1;
-              display: block;
+            display: block;
+
+
             //   position: relative;
 
             //   &::before {
@@ -34,44 +36,73 @@
             //     opacity: 0.5;  // Adjust the opacity as needed
             //     z-index: 3;  // Behind the burger menu
             // }
-            
-              &:hover .bar {
+
+            &:hover .bar {
                 background-color: #E65100;
-              }
-            
+            }
+
 
             .bar {
-              width: 50px;
-              height: 6px;
-              background-color: #4d4d4e;
-              margin: 8px 0;
-              transition: 0.4s;
-              @media screen and (max-width: 800px) {
-                width: 25px;
-                height: 3px;
-                margin: 4px 0;
+                width: 50px;
+                height: 6px;
+                background-color: #4d4d4e;
+                margin: 8px 0;
+                transition: 0.4s;
+
+                @media screen and (max-width: 800px) {
+                    width: 25px;
+                    height: 3px;
+                    margin: 4px 0;
+                }
             }
+        }
+
+        &.menu-open {
+            
+            .top-nav,
+            .middle-nav,
+            .bot-nav,
+            .contact-nav {
+                // svg {
+                //     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
+                //     transform: translateY(-20px); // Initial position off-screen
+                //     opacity: 0;
+                //     animation: fadeInAndExpand 0.5s ease-in-out forwards; // Apply the keyframes
+                // }
+                
+                
             }
-          }
-        
-          &.menu-open {
+
+            @keyframes fadeInAndExpand {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px) scale(0.8); // Initial position and scale
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1); // Final position and scale
+                }
+            }
+
             .bar {
                 background-color: #E65100;
-              }
-            nav {
-              display: flex;
             }
+
+            nav {
+                display: flex;
+            }
+
             ul {
                 display: none;
-              }
-          }
+            }
+        }
 
-          &:menu-closed {
+        &.menu-closed {
             nav {
                 visibility: hidden;
                 display: none;
             }
-          }
+        }
 
         .logo {
             flex-basis: 10%;
@@ -119,7 +150,7 @@
             text-align: center;
             width: 100%;
             overflow: hidden;
-            justify-content: center; 
+            justify-content: center;
 
             @media screen and (max-height: 600px),
             (max-width: 800px) {
@@ -136,16 +167,21 @@
                     display: block;
                     width: 80%;
                     height: 1px;
-                    background-color: #4d4d4e; /* Adjust the color as needed */
+                    background-color: #4d4d4e;
+                    /* Adjust the color as needed */
                     // margin-top: 5px; /* Adjust the margin as needed */
                     position: relative;
-                    left: 50%; /* Position from the center */
-                    transform: translateX(-50%); /* Center the line */
+                    left: 50%;
+                    /* Position from the center */
+                    transform: translateX(-50%);
+
+                    /* Center the line */
                     @media screen and (max-height: 600px),
-                    (max-width: 800px) { 
+                    (max-width: 800px) {
                         display: none;
+                    }
                 }
-                }
+
                 svg {
                     height: 2rem !important;
                     width: auto;
@@ -160,16 +196,21 @@
                     margin-bottom: 10px;
                     width: 80%;
                     height: 1px;
-                    background-color: #4d4d4e; /* Adjust the color as needed */
+                    background-color: #4d4d4e;
+                    /* Adjust the color as needed */
                     // margin-top: 5px; /* Adjust the margin as needed */
                     position: relative;
-                    left: 50%; /* Position from the center */
-                    transform: translateX(-50%); /* Center the line */
+                    left: 50%;
+                    /* Position from the center */
+                    transform: translateX(-50%);
+
+                    /* Center the line */
                     @media screen and (max-height: 600px),
-                    (max-width: 800px) { 
+                    (max-width: 800px) {
                         display: none;
+                    }
                 }
-                }
+
                 margin-bottom: 23px;
                 margin-top: 15px;
 
@@ -192,6 +233,7 @@
 
             .middle-nav {
                 margin-bottom: 0px;
+
                 svg {
                     height: 3.2rem !important;
                     width: auto;
@@ -496,6 +538,7 @@
             text-align: center;
             // margin: 0;
             margin-bottom: 20px;
+
             // margin-top: auto;  // Add this line to make the ul stick to the bottom
             @media screen and (max-height: 600px),
             (max-width: 800px) {
@@ -511,8 +554,9 @@
 
                     svg {
                         height: 25px;
+
                         @media screen and (max-width: 800px) {
-                            height: 20px;    
+                            height: 20px;
                         }
                     }
 
