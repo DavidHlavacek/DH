@@ -7,15 +7,51 @@
         z-index: 3;
         margin-top: 0;
         justify-content: space-between;  // Add this line to push the logo and nav to the top and bottom
-    align-items: center;  // Add this line to center the items horizontally
-
-        justify-content: center; // Ensure no unexpected top margin
+        align-items: center;  // Add this line to center the items horizontally
+        justify-content: center; 
+        // Ensure no unexpected top margin
         @media screen and (max-width: 800px) {
         }
+        
+        .burger-menu {
+            cursor: pointer;
+            padding: 15px;
+            flex: 1;
+              display: block;
+            
+              &:hover .bar {
+                background-color: #E65100;
+              }
+            
+
+            .bar {
+              width: 50px;
+              height: 6px;
+              background-color: #4d4d4e;
+              margin: 8px 0;
+              transition: 0.4s;
+              
+            }
+          }
+        
+          &.menu-open {
+            .bar {
+                background-color: #E65100;
+              }
+            nav {
+              display: flex;
+            }
+            ul {
+                display: none;
+              }
+          }
 
         .logo {
             flex-basis: 10%;
             padding: 8px 0;
+            // position: fixed;
+            // top: 0;
+            flex: 1;
 
             @media screen and (max-width: 800px) {
                 padding: 2px 0;
@@ -28,14 +64,14 @@
                 height: auto;
 
                 @media screen and (max-width: 800px) {
-                    width: 30px;
+                    width: 40px;
                 }
 
                 &.sub-logo {
                     width: 70px;
 
                     @media screen and (max-width: 800px) {
-                        width: 35px;
+                        width: 50px;
                     }
                 }
             }
@@ -66,7 +102,7 @@
                     width: 80%;
                     height: 1px;
                     background-color: #4d4d4e; /* Adjust the color as needed */
-                    margin-top: 5px; /* Adjust the margin as needed */
+                    // margin-top: 5px; /* Adjust the margin as needed */
                     position: relative;
                     left: 50%; /* Position from the center */
                     transform: translateX(-50%); /* Center the line */
@@ -350,7 +386,7 @@
                 a.services-link {
                     &:after {
                         content: 'SERVICES';
-                        margin-left: 0.5px;
+                        // margin-left: 0.5px;
                         font-weight: 500;
 
                         @media screen and (max-height: 600px),
@@ -363,7 +399,7 @@
                 a.education-link {
                     &:after {
                         content: 'EDUCATION';
-                        margin-left: 1px;
+                        // margin-left: 1px;
                         font-weight: 500;
                     }
                 }
@@ -378,7 +414,7 @@
                 a.contact-link {
                     &:after {
                         content: 'CONTACT';
-                        margin-left: 1px;
+                        // margin-left: 1px;
                         font-weight: 500;
                     }
                 }
@@ -406,11 +442,12 @@
             padding: 0;
             list-style: none;
             text-align: center;
-            margin: 0;
-            margin-bottom: 5px;
+            // margin: 0;
+            margin-bottom: 20px;
+            // margin-top: auto;  // Add this line to make the ul stick to the bottom
             @media screen and (max-height: 600px),
             (max-width: 800px) {
-                margin-bottom: 25px;
+                // margin-bottom: 25px;
             }
 
             li {
