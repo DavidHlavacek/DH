@@ -7,7 +7,7 @@ import GithubIcon from '../../assets/icons/github.png'
 import LinkedinIcon from '../../assets/icons/linkedin.png'
 import GmailIcon from '../../assets/icons/gmail.png'
 import GoogleIcon from '../../assets/icons/google.png'
-import CV from '../../assets/cv.pdf'
+import CV from '../../assets/files/cv.pdf'
 
 
 
