@@ -6,7 +6,10 @@
         top: 0;
         z-index: 3;
         margin-top: 0;
-        justify-content: flex-start; // Ensure no unexpected top margin
+        justify-content: space-between;  // Add this line to push the logo and nav to the top and bottom
+    align-items: center;  // Add this line to center the items horizontally
+
+        justify-content: center; // Ensure no unexpected top margin
         @media screen and (max-width: 800px) {
         }
 
@@ -45,11 +48,11 @@
             text-align: center;
             width: 100%;
             overflow: hidden;
-
+            justify-content: center; 
 
             @media screen and (max-height: 600px),
             (max-width: 800px) {
-                margin-top: 150px;
+                // margin-top: 150px;
             }
 
             .top-nav,
@@ -404,9 +407,10 @@
             list-style: none;
             text-align: center;
             margin: 0;
+            margin-bottom: 5px;
             @media screen and (max-height: 600px),
             (max-width: 800px) {
-                // margin-bottom: 80px;
+                margin-bottom: 25px;
             }
 
             li {
