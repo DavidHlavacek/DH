@@ -11,7 +11,7 @@ const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const firstNameArray = ['a', 'v', 'i', 'd']
     const lastNameArray = ['l', 'a', 'v', 'a', 'c', 'e', 'k']
-    const jobString = "developper";
+    const jobString = "IT Developer";
     const jobArray = jobString.split('');
 
     useEffect(() => {

@@ -46,7 +46,7 @@ const Sidebar = () => (
                     <svg
                         stroke="currentColor"
                         fill="#000"
-                        stroke-width="0"
+                        strokeWidth="0"
                         version="1"
                         viewBox="0 0 48 48"
                         enable-background="new 0 0 48 48"

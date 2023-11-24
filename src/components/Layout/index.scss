@@ -1,13 +1,23 @@
 .page {
-    width: 100%;
+    grid-column: 2;
     height: 100vh;
-    position: absolute;
-    left: 80px;
     margin: 0;
+    width: 100%; // Set the width to 90% to match the second column
     @media screen and (max-height: 600px), (max-width: 800px) {
-        left: 40px;
-
+        width: 100%; // Adjust as needed for smaller screens
     }
+}
+
+.App {
+    height: 100vh;
+    overflow: hidden; // Ensure no overflow issues
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 6.35% calc(100% - 6.35%);
+    height: 100%;
+    overflow: hidden; // Ensure no overflow issues
 }
 
 .top-tags {
@@ -34,9 +44,8 @@
     will-change: contents;
     height: 90%;
     // min-height: 566px;
-    position: absolute;
     opacity: 0;
-    top: 5%;
+    grid-column: 2;
     margin: 0 auto;
     z-index: 1;
     transform-style: preserve-3d;
@@ -46,9 +55,11 @@
 
 .about-page,
 .contact-page {
+    grid-column: 2;
+
     .text-zone {
         position: absolute;
-        left: 10%;
+        left: 5%;
         top: 50%;
         transform: translateY(-50%);
         width: 50%;
@@ -56,6 +67,10 @@
         display: table-cell;
         max-height: 90%;
         z-index: 1;
+
+        @media screen and (max-width: 500px) {
+            left: 5%;
+        }
 
 
         h1 {

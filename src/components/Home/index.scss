@@ -1,9 +1,10 @@
 .home-page {
+    grid-column: 2;
 
     .text-zone {
-        position: absolute;
-        left: 10%;
-        top: 50%;
+        position: relative;
+        left: 5%;
+        top: 40%;
         transform: translateY(-50%);
         width: 50%;
         max-height: 90%;
@@ -121,16 +122,11 @@
         animation: fadeIn 1s 1.8s backwards;
         z-index: 1;
 
-        @media (max-width: 800px) {
-            font-size: 12px;
-        }
-
-        @media (max-width: 680px) {
-            font-size: 9px;
+        @media screen and (max-width: 680px) {
+            font-size: 10px;
             letter-spacing: 1.5px;
             font-weight: 500;
         }
-
     }
 
     .flat-button-services {
@@ -160,8 +156,10 @@
             color: #ffd700;
         }
 
-        
-        
+        @media screen and (max-width: 500px) {
+            font-size: 11px;
+            padding: 5px 10px;
+        }
     }
     .flat-button-contact {
         display: flex;
@@ -188,7 +186,10 @@
             color: #333;
         }
 
-        
+        @media screen and (max-width: 500px) {
+            font-size: 11px;
+            padding: 5px 10px;
+        }
       
     }
 }

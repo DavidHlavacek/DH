@@ -1,4 +1,5 @@
 .projectBar-container {
+    grid-column: 2;
     position: absolute;
     display: flex;
     align-items: center;
@@ -7,12 +8,18 @@
     height: 15%;
     top: 3px;
     bottom: 0;
-    left: 0%;
+    left: 5%;
     background: #011a27;
 
     @media screen and (max-width: 1140px) {
         height: 8%;
+        left:10%;
     }
+
+    // @media screen and (max-width: 350px) {
+    //     height: 8%;
+    //     left:15%;
+    // }
 
         p {
             @media screen and (max-width: 1140px) {
