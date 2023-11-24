@@ -64,7 +64,7 @@ const Sidebar = () => {
                             strokeWidth="0"
                             version="1"
                             viewBox="0 0 48 48"
-                            enable-background="new 0 0 48 48"
+                            enableBackground="new 0 0 48 48"
                             height="100px"
                             width="100px"
                             xmlns="http://www.w3.org/2000/svg"

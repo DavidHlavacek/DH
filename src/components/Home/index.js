@@ -27,7 +27,8 @@ const Home = () => {
                     <h1>
                         <span className='hi-zone'>
                         <span className={letterClass}>H</span>
-                        <span className={`${letterClass} _11`}>i,</span>
+                        <span className={`${letterClass} _10`}>i</span>
+                        <span className={`${letterClass} _11`}>,</span>
                         </span>
                         <br />
                         <span className='name-zone'>
