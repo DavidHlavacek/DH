@@ -12,6 +12,13 @@
             top: 50%; /* Set the top to 50% for the second cube to position it below the first */
         }
 
+        @media screen and (min-width: 500px) and (max-width: 800px) {
+            top: 90%;
+            &:nth-child(2) {
+                top: 65%; /* Set the top to 50% for the second cube to position it below the first */
+            }
+        }
+
         @media screen and (min-width: 1020px) {
             top: 10%;
             right: 5%;
@@ -21,21 +28,23 @@
             }
         }
 
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: 800px) {
         
-            top:85%;
+            top:92%;
             left: 15%;
             &:nth-child(2) {
-                top: 65%; /* Set the top to 50% for the second cube to position it below the first */
+                top: 72%; /* Set the top to 50% for the second cube to position it below the first */
             }
 
             
         }
+
+    
     }
 
     .about-page {
         .text-zone {
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: 800px) {
         width: 60%;
 
         }
@@ -51,7 +60,7 @@
         transform-origin: 100px 100px 0;
         margin-left: calc(50% - 100px);
 
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: 800px) {
             transform-origin: 50px 50px 0;
             width: 50px;
             margin-left: calc(50% - 25px); /* Adjust margin-left accordingly */
@@ -76,7 +85,7 @@
             align-items: center;
             box-shadow: 0 0 20px 0px lightyellow;
 
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: 800px) {
                 width: 100px;
                 height: 100px;
                 font-size: 50px;
@@ -86,27 +95,46 @@
         }
 
         .face1 {
-            transform: translateZ(50px);
+            transform: translateZ(100px);
+            @media screen and (max-width: 800px) { 
+                transform: translateZ(50px);
+            }
             color: #dd0031;
+            
         }
         .face2 {
-            transform: rotateY(90deg) translateZ(50px);
+            transform: rotateY(90deg) translateZ(100px);
+            @media screen and (max-width: 800px) { 
+                transform: rotateY(90deg) translateZ(50px)
+            }
             color: #f06529;
         }
         .face3 {
-            transform: rotateY(90deg) rotateX(90deg) translateZ(50px);
+            transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+            @media screen and (max-width: 800px) { 
+                transform: rotateY(90deg) rotateX(90deg) translateZ(50px);
+            }
             color: #28a4d9;
         }
         .face4 {
-            transform: rotateY(180deg) rotateZ(90deg) translateZ(50px);
+            transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+            @media screen and (max-width: 800px) { 
+                transform: rotateY(180deg) rotateZ(90deg) translateZ(50px);
+            }
             color: #5ed4f4;
         }
         .face5 {
-            transform: rotateY(-90deg) rotateZ(90deg) translateZ(50px);
+            transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+            @media screen and (max-width: 800px) { 
+                transform: rotateY(-90deg) rotateZ(90deg) translateZ(50px);
+            }
             color: #efd81d;
         }
         .face6 {
-            transform: rotateX(-90deg) translateZ(50px);
+            transform: rotateX(-90deg) translateZ(100px);
+            @media screen and (max-width: 800px) { 
+                transform: rotateX(-90deg) translateZ(50px);
+            }
             color: #ec4d28;
         }
     }
