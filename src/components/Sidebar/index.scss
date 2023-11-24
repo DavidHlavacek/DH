@@ -129,6 +129,10 @@
                     width: 38px;
                 }
 
+                @media screen and (max-width: 450px) {
+                    width: 30px;
+                }
+
                 &.sub-logo {
                     width: 80px;
 
@@ -138,6 +142,10 @@
 
                     @media screen and (max-width: 550px) {
                         width: 48px;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        width: 40px;
                     }
                 }
             }
