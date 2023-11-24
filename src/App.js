@@ -10,17 +10,21 @@ import UnderConstructionPage from './components/UnderConstruction';
 function App() {
   return (
     <>
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />}/>
-        <Route path="about" element={<About />}/>
-        <Route path="services" element={<Services />}/>
-        <Route path="contact" element={<Contact />}/>
-        <Route path="education" element={<UnderConstructionPage />}/>
-        <Route path="work" element={<UnderConstructionPage />}/>
+      <div className='styles-main'>
+        <div className='styles-container'>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="services" element={<Services />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="education" element={<UnderConstructionPage />} />
+              <Route path="work" element={<UnderConstructionPage />} />
 
-      </Route>
-    </Routes>
+            </Route>
+          </Routes>
+        </div>
+      </div>
     </>
   );
 }

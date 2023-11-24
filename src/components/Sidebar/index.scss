@@ -160,6 +160,11 @@
             overflow: hidden;
             justify-content: center;
 
+            
+            @supports (-webkit-touch-callout: none) {
+                margin-bottom: 100px;            
+            }
+
             @media screen and (max-height: 600px),
             (max-width: 800px) {
                 // margin-top: 150px;
@@ -546,6 +551,9 @@
             text-align: center;
             // margin: 0;
             margin-bottom: 20px;
+            @supports (-webkit-touch-callout: none) {
+                margin-bottom: 100px;
+            }
 
             // margin-top: auto;  // Add this line to make the ul stick to the bottom
             @media screen and (max-height: 600px),
