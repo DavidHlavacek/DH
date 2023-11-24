@@ -1,3 +1,13 @@
+.sidebar {
+    grid-column: 1;
+    height: 100vh;
+    margin: 0;
+    width: 100%; // Set the width to 90% to match the second column
+    @media screen and (max-height: 600px), (max-width: 800px) {
+        width: 100%; // Adjust as needed for smaller screens
+    }
+}
+
 .page {
     grid-column: 2;
     height: 100vh;
@@ -15,7 +25,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: 6.35% calc(100% - 6.35%);
+    grid-template-columns: 10% 90%;
     height: 100%;
     overflow: hidden; // Ensure no overflow issues
 }
@@ -45,8 +55,7 @@
     height: 90%;
     // min-height: 566px;
     opacity: 0;
-    grid-column: 2;
-    margin: 0 auto;
+    margin-left: 8%;;
     z-index: 1;
     transform-style: preserve-3d;
     animation: fadeIn 1s forwards;
@@ -55,13 +64,13 @@
 
 .about-page,
 .contact-page {
-    grid-column: 2;
-
+    width: 50%;
     .text-zone {
-        position: absolute;
-        left: 5%;
+        
+        position: relative;
+        left: 0%;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(10%);
         width: 50%;
         vertical-align: middle;
         display: table-cell;
@@ -69,7 +78,7 @@
         z-index: 1;
 
         @media screen and (max-width: 500px) {
-            left: 5%;
+            left: 0%;
         }
 
 

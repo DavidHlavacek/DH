@@ -3,7 +3,7 @@
 
     .text-zone {
         position: relative;
-        left: 5%;
+        left: 0%;
         top: 40%;
         transform: translateY(-50%);
         width: 50%;
@@ -12,7 +12,7 @@
         white-space: nowrap; // Add this line to prevent line breaks
 
         @media screen and (max-width: 500px) {
-            left: 5%;
+            left: 0%;
             top: 35%;
         }
         

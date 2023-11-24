@@ -7,7 +7,9 @@ const Layout = () => {
     return (
         <div className='App'>
             <div className='grid-container'>
+                <div className='sidebar'>
                 <Sidebar />
+                </div>
                 <div className='page'>
                     <Outlet />
                 </div>

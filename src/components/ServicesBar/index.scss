@@ -1,217 +1,215 @@
-.projectBar-container {
-    grid-column: 2;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    height: 15%;
-    top: 3px;
-    bottom: 0;
-    left: 5%;
-    background: #011a27;
+.horizontal-line {
+    border-right: 6px solid black;
+    height: 191vh;
+    background: linear-gradient(to right, #080808, #000000);
+  }
+    .projectBar-container {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        height: 15%;
+        top: 3px;
+        bottom: 0;
+        background: #011a27;
+        
+    
 
-    @media screen and (max-width: 1140px) {
-        height: 8%;
-        left:10%;
-    }
-
-    // @media screen and (max-width: 350px) {
-    //     height: 8%;
-    //     left:15%;
-    // }
-
-        p {
-            @media screen and (max-width: 1140px) {
-                display: none;
-            }
+        @media screen and (max-width: 1140px) {
+            height: 8%;
         }
-    
-    
 
-    .projectContainer,
-    .activeProjectContainer {
+        // @media screen and (max-width: 350px) {
+        //     height: 8%;
+        //     left:15%;
+        // }
 
-
+            p {
+                @media screen and (max-width: 1140px) {
+                    display: none;
+                }
+            }
         
-    
-                height: 100px;
-                width: 100%;
-               
-                .x-button {
-                    // position: absolute;
-                    // margin-left: 160px; // Adjust this value as needed
-                    opacity: 0; // Initially hide the close button
-                    transition: opacity 0.3s ease; // Add a smooth transition effect
-                    @media screen and (max-width: 1140px) {
-                        display: none;
-                    }
-
-                }
-                
-                &:hover .x-button {
-                    opacity: 1; // Make the close button visible when hovering over the tab
-                    @media screen and (max-width: 1140px) {
-                        display: none;
-                    }
-                }
         
-                &.activeProjectContainer .x-button {
-                    opacity: 1; // Make the close button always visible on the active tab
-                    @media screen and (max-width: 1140px) {
-                        display: none;
+
+        .projectContainer,
+        .activeProjectContainer {
+
+
+            
+        
+                    height: 100px;
+                    width: 100%;
+                
+                    .x-button {
+                        // position: absolute;
+                        // margin-left: 160px; // Adjust this value as needed
+                        opacity: 0; // Initially hide the close button
+                        transition: opacity 0.3s ease; // Add a smooth transition effect
+                        @media screen and (max-width: 1140px) {
+                            display: none;
+                        }
+
                     }
+                    
+                    &:hover .x-button {
+                        opacity: 1; // Make the close button visible when hovering over the tab
+                        @media screen and (max-width: 1140px) {
+                            display: none;
+                        }
+                    }
+            
+                    &.activeProjectContainer .x-button {
+                        opacity: 1; // Make the close button always visible on the active tab
+                        @media screen and (max-width: 1140px) {
+                            display: none;
+                        }
+                    }
+                    
+                    // ... (rest of the styles)
+                    
+            img {
+                height: 40px;
+                margin-left: 50px;
+                @media screen and (max-width: 1140px) {
+                    height: 30px;
+                    margin-left: 20px;
                 }
-                
-                // ... (rest of the styles)
-                
-        img {
-            height: 40px;
-            margin-left: 50px;
-            @media screen and (max-width: 1140px) {
-                height: 30px;
+            
+            }
+            &:nth-child(1) {
+                img {
+                height: 50px;
+                margin-left: 30px;
+                @media screen and (max-width: 1140px) {
+                    height: 40px;
+                    margin-left: 15px;
+                }
+                }
+            }
+            
+        
+            svg {
+                // w-6 ml-4 hover:bg-gray-600 hover:rounded
+                width: 20px;
+                margin-left: 15px;
+                &:hover {
+                    background-color: #808080;
+                    border-radius: 5px;
+                }            
+            }
+            p {
+                font-family: "Cascadia";
+                font-size: 60%;
                 margin-left: 20px;
             }
+            &:nth-child(1) {
+                p {
+                    margin-left: 6px;
+                }
+            }
            
-        }
-        &:nth-child(1) {
-            img {
-            height: 50px;
-            margin-left: 30px;
-            @media screen and (max-width: 1140px) {
-                height: 40px;
-                margin-left: 15px;
+
+
+            
+            
+            
+            &::after {
+                margin-left: 20px;
+                content: '';
+                height: 100%; // Adjust the height as needed
+                width: 5px;
+                background-color: #000; // Color of the vertical line
             }
+            // &:last-of-type:after {
+            //     margin-left: 20px;
+            //     content: '';
+            //     height: 100%; // Adjust the height as needed
+            //     width: 5px;
+            //     background-color: #000; // Color of the vertical line
+            //     border-bottom: none; // Add this line for the bottom border
+            // }
+            &:last-child:after {
+                border-left: 5px solid #000; // Add this line for the bottom border
+                background-color: #011a27;
+                width: 100vw; // Color of the vertical line
+                border-top: 6px solid #011a27;
+                border-bottom: 5px solid #000; 
             }
+
         }
-       
-        svg {
-            // w-6 ml-4 hover:bg-gray-600 hover:rounded
-            width: 20px;
-            margin-left: 15px;
+
+        
+
+        .projectContainer {
+            border-top: 5px solid #000; // Add this line for the bottom border
+
+            //     h-full
+            //   flex
+            //   items-center
+            //   justify-center
+            //   px-4
+            //   text-white
+            //   hover:bg-[#1e1e1e]
+            //   hover:text-yellow_vs
+            //   cursor-pointer
+            //   text-lg
+            //   font-medium
+            //   text-gray-300
+            border-bottom: 5px solid #000; // Add this line for the bottom border
+
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            cursor: pointer;
+            font-size: 30px;
+            
+
             &:hover {
-                background-color: #808080;
-                border-radius: 5px;
-            }            
-        }
-        p {
-            font-family: "Cascadia";
-            font-size: 60%;
-            margin-left: 20px;
-        }
-        &:nth-child(1) {
-            p {
-                margin-left: 6px;
+                background-color: #022c43;
+                color: #ffd700;
             }
         }
-        &:first-of-type::before {
-            content: '';
-            height: 5000px; // Adjust the height as needed
-            width: 10px;
-            // background-color: #000;
-            background: linear-gradient(to right, #080808, #000000); // Progressive gradient from left to right
-        }
 
+        .activeProjectContainer {
+            border-top: 6.5px solid #000; // Add this line for the bottom border 
+            &:nth-child(3) {
+                border-right: 1px solid #000;   
+                border-left: 1px solid #000;   
+            } 
+            &:nth-child(4) {
+                border-right: 1px solid #000;   
+                border-left: 1px solid #000;   
+            } 
 
+            border-bottom: none; // Add this line for the bottom border
 
-        
-        
-        
-        &::after {
-            margin-left: 20px;
-            content: '';
-            height: 100%; // Adjust the height as needed
-            width: 5px;
-            background-color: #000; // Color of the vertical line
-        }
-        // &:last-of-type:after {
-        //     margin-left: 20px;
-        //     content: '';
-        //     height: 100%; // Adjust the height as needed
-        //     width: 5px;
-        //     background-color: #000; // Color of the vertical line
-        //     border-bottom: none; // Add this line for the bottom border
-        // }
-        &:last-child:after {
-            border-left: 5px solid #000; // Add this line for the bottom border
-            background-color: #011a27;
-            width: 5000px; // Color of the vertical line
-            border-top: 6px solid #011a27;
-            border-bottom: 5px solid #000; 
-        }
+            //     h-full
+            //   flex
+            //   items-center
+            //   justify-center
+            //   px-4
+            //   text-white
+            //   bg-[#1e1e1e]
+            //   hover:text-yellow_vs
+            //   cursor-pointer
+            //   text-lg
+            //   font-medium
+            //   text-gray-300
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background: #022c43;
+            cursor: pointer;
+            font-size: 30px;
 
-    }
-
-    
-
-    .projectContainer {
-        border-top: 5px solid #000; // Add this line for the bottom border
-
-        //     h-full
-        //   flex
-        //   items-center
-        //   justify-center
-        //   px-4
-        //   text-white
-        //   hover:bg-[#1e1e1e]
-        //   hover:text-yellow_vs
-        //   cursor-pointer
-        //   text-lg
-        //   font-medium
-        //   text-gray-300
-        border-bottom: 5px solid #000; // Add this line for the bottom border
-
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        cursor: pointer;
-        font-size: 30px;
-        
-
-        &:hover {
-            background-color: #022c43;
-            color: #ffd700;
+            &:hover {
+                color: #ffd700;
+            }
         }
     }
-
-    .activeProjectContainer {
-        border-top: 6.5px solid #000; // Add this line for the bottom border 
-        &:nth-child(3) {
-            border-right: 1px solid #000;   
-            border-left: 1px solid #000;   
-        } 
-        &:nth-child(4) {
-            border-right: 1px solid #000;   
-            border-left: 1px solid #000;   
-        } 
-
-        border-bottom: none; // Add this line for the bottom border
-
-        //     h-full
-        //   flex
-        //   items-center
-        //   justify-center
-        //   px-4
-        //   text-white
-        //   bg-[#1e1e1e]
-        //   hover:text-yellow_vs
-        //   cursor-pointer
-        //   text-lg
-        //   font-medium
-        //   text-gray-300
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        background: #022c43;
-        cursor: pointer;
-        font-size: 30px;
-
-        &:hover {
-            color: #ffd700;
-        }
-    }
-}

@@ -46,6 +46,7 @@ const ServicesBar = ({ showPage, setShowPage }) => {
         <>
         <div className="page-container">
             <div className="projectBar-container">
+                <div className="horizontal-line"></div>
                 {['Main', 'Web Development', 'Software Development', 'Projects'].map((page, index, array) =>
                     hidePage.includes(page) ? null : (
                         <>
