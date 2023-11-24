@@ -133,9 +133,10 @@
             &:last-child:after {
                 border-left: 5px solid #000; // Add this line for the bottom border
                 background-color: #011a27;
-                width: 100vw; // Color of the vertical line
+                width: 200px; // Color of the vertical line
                 border-top: 6px solid #011a27;
-                border-bottom: 5px solid #000; 
+                border-bottom: 5px solid #000;
+                 
             }
 
         }

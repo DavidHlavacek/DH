@@ -38,7 +38,7 @@ const UnderConstructionPage = () => (
       placeholder: 'Enter your email',
       buttonText: 'Subscribe',
       onSubmit: (value) => {
-        console.log('user typed email :', value);
+        
       }
     }}
     links={[

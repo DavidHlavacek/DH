@@ -83,7 +83,9 @@ const ServicesBar = ({ showPage, setShowPage }) => {
                         </>
                     )
                 )}
+                
             </div>
+            <div className="tab-bar-extension"></div>
         </div>
         <Loader type="cube-transition" />
         </>
