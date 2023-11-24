@@ -18,6 +18,21 @@
             padding: 5px;
             flex: 1;
               display: block;
+            //   position: relative;
+
+            //   &::before {
+            //     content: '';
+            //     position: absolute;
+            //     width: 65px;  // Adjust the size of the circle as needed
+            //     height: 65px;  // Adjust the size of the circle as needed
+            //     border: 2px solid #E65100;  // Color of the circle
+            //     border-radius: 50%;
+            //     top: 11.5%;  // Center vertically
+            //     left: 50%;  // Center horizontally
+            //     transform: translate(-50%, -50%);  // Center the circle
+            //     opacity: 0.5;  // Adjust the opacity as needed
+            //     z-index: 3;  // Behind the burger menu
+            // }
             
               &:hover .bar {
                 background-color: #E65100;
@@ -30,7 +45,10 @@
               background-color: #4d4d4e;
               margin: 8px 0;
               transition: 0.4s;
-              
+              @media screen and (max-width: 800px) {
+                width: 25px;
+                height: 3px;
+            }
             }
           }
         
@@ -60,7 +78,7 @@
             img {
                 display: block;
                 margin: 8px auto;
-                width: 60px;
+                width: 70px;
                 height: auto;
 
                 @media screen and (max-width: 800px) {
@@ -68,7 +86,7 @@
                 }
 
                 &.sub-logo {
-                    width: 70px;
+                    width: 80px;
 
                     @media screen and (max-width: 800px) {
                         width: 50px;
@@ -457,6 +475,10 @@
                     display: block;
                     font-size: 15px;
                     line-height: 16px;
+
+                    svg {
+                        height: 25px;
+                    }
 
                     &:hover svg {
                         color: #ffd700;
