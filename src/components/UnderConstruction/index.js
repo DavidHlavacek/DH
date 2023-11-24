@@ -57,7 +57,7 @@ const UnderConstructionPage = () => (
     ]}
     />
 
-   {/* <a href={CV} download="CV"><button class="flat-button">Download Curriculum Vitae</button></a> */}
+   <a href={CV} download="CV"><button class="flat-button">Download Curriculum Vitae</button></a>
 
   </div>
 );
