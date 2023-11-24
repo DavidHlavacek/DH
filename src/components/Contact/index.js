@@ -65,7 +65,7 @@ const Contact = () => {
                         the contact form below!
                     </p>
                     <div className="contact-form">
-                        <form ref={refForm} onSubmit={sendEmail}> 
+                        <form ref={refForm} onSubmit={sendEmail} method='POST'> 
                             <ul>
                                 <li className="half">
                                     <input
