@@ -44,50 +44,50 @@ const ServicesBar = ({ showPage, setShowPage }) => {
 
     return (
         <>
-        <div className="page-container">
-            <div className="projectBar-container">
-                <div className="horizontal-line"></div>
-                {['Main', 'Web Development', 'Software Development', 'Projects'].map((page, index, array) =>
-                    hidePage.includes(page) ? null : (
-                        <>
-                            <div
-                                key={page}
-                                className={`${
-                                    showPage === page
-                                        ? 'activeProjectContainer'
-                                        : 'projectContainer'
-                                } ${index === array.length - 1 ? 'last' : ''}`}
-                                onClick={() => handleTabClick(page)}
-                            >
-                                <img
-                                    src={tabIcons[page]}
-                                    alt={`${page} Icon`}
-                                    className="w-7 mr-1 text-yellow_vs"
-                                />
-                                <p>{`${
-                                    index === 0 ? page : page.charAt(0).toUpperCase() + page.slice(1)
-                                }${index === 0 ? '.js' : ''}`}</p>
-                                <div key={page}
-                                    className="x-button"
-                                    onClick={(e) =>
-                                        handleTabCloseClick(e, page)
-                                    }
+            <div className="page-container">
+            <div className="vertical-line"></div>
+
+                <div className="projectBar-container">
+                    {['Main', 'Web Development', 'Software Development', 'Projects'].map((page, index, array) =>
+                        hidePage.includes(page) ? null : (
+                            <>
+                                <div
+                                    key={page}
+                                    className={`${showPage === page
+                                            ? 'activeProjectContainer'
+                                            : 'projectContainer'
+                                        } ${index === array.length - 1 ? 'last-tab' : ''} ${index === 0 ? 'first-tab' : ''}`}
+                                    onClick={() => handleTabClick(page)}
                                 >
-                                    <XIcon
-                                        className={`w-6 ml-4 hover:bg-gray-600 hover:rounded ${
-                                            showPage === page ? 'visible' : ''
-                                        }`}
+                                    <img
+                                        src={tabIcons[page]}
+                                        alt={`${page} Icon`}
+                                        className="w-7 mr-1 text-yellow_vs"
                                     />
+                                    <p>{`${index === 0 ? page : page.charAt(0).toUpperCase() + page.slice(1)
+                                        }${index === 0 ? '.js' : ''}`}</p>
+                                    <div key={page}
+                                        className="x-button"
+                                        onClick={(e) =>
+                                            handleTabCloseClick(e, page)
+                                        }
+                                    >
+                                        <XIcon
+                                            className={`w-6 ml-4 hover:bg-gray-600 hover:rounded ${showPage === page ? 'visible' : ''
+                                                }`}
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                        </>
-                    )
-                )}
-                
+                                {index === array.length - 1 && (
+                                    <div className="tab-bar-extension"></div>
+                                )}
+                            </>
+                        )
+                    )}
+
+                </div>
             </div>
-            <div className="tab-bar-extension"></div>
-        </div>
-        <Loader type="cube-transition" />
+            <Loader type="cube-transition" />
         </>
 
     )

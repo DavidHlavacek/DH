@@ -1,7 +1,15 @@
-.horizontal-line {
-    border-right: 6px solid black;
-    height: 191vh;
-    background: linear-gradient(to right, #080808, #000000);
+.tab-bar-extension {
+    height: 100%;
+    flex-grow: 1;
+    background-color: #011a27;
+    border-top: 5px solid #000;
+    border-bottom: 5px solid #000;/* Add border similar to other tabs */
+}
+
+.vertical-line {
+    height: 100vh;
+    width: 5px;
+    background-color: #000;
   }
     .projectBar-container {
         position: absolute;
@@ -13,6 +21,10 @@
         top: 3px;
         bottom: 0;
         background: #011a27;
+        width: 90%;
+        
+        
+        
         
     
 
@@ -36,11 +48,10 @@
         .projectContainer,
         .activeProjectContainer {
 
-
+            
             
         
                     height: 100px;
-                    width: 100%;
                 
                     .x-button {
                         // position: absolute;
@@ -71,7 +82,8 @@
                     
             img {
                 height: 50px;
-                margin-left: 50px;
+                margin-left: 25px;
+                margin-right: 15px;
                 @media screen and (max-width: 1140px) {
                     height: 30px;
                     margin-left: 20px;
@@ -79,16 +91,32 @@
             
             }
 
-            &:nth-child(1) {
+            &.first-tab {
                 img {
-                height: 50px;
-                margin-left: 20px;
-                @media screen and (max-width: 1140px) {
-                    height: 40px;
-                    margin-left: 15px;
+                    margin-right: 3px;
+                    height: 70px;
+                    @media screen and (max-width: 1140px) {
+                        height: 50px;
+                        margin-left: 8px;
+                        margin-right: 8px;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                height: 100%; // Adjust the height as needed
+                width: 5px;
+                background-color: #000; 
                 }
             }
+
+            &.last-tab {
+                &::after {
+                    
+                }
             }
+
+            
             
             
         
@@ -96,6 +124,7 @@
                 // w-6 ml-4 hover:bg-gray-600 hover:rounded
                 width: 20px;
                 margin-left: 15px;
+                margin-right: 15px;
                 &:hover {
                     background-color: #808080;
                     border-radius: 5px;
@@ -114,11 +143,15 @@
            
 
 
-            
+            // &:before {
+            //     content: '';
+            //     height: 100%; // Adjust the height as needed
+            //     width: 5px;
+            //     background-color: #000; // Color of the vertical line
+            // }
             
             
             &::after {
-                margin-left: 20px;
                 content: '';
                 height: 100%; // Adjust the height as needed
                 width: 5px;
@@ -132,14 +165,14 @@
             //     background-color: #000; // Color of the vertical line
             //     border-bottom: none; // Add this line for the bottom border
             // }
-            &:last-child:after {
-                border-left: 5px solid #000; // Add this line for the bottom border
-                background-color: #011a27;
-                width: 1000px; // Color of the vertical line
-                border-top: 6px solid #011a27;
-                border-bottom: 5px solid #000;
+            // &:last-child:after {
+            //     border-left: 5px solid #000; // Add this line for the bottom border
+            //     background-color: #011a27;
+            //     width: 1000px; // Color of the vertical line
+            //     border-top: 6px solid #011a27;
+            //     border-bottom: 5px solid #000;
                  
-            }
+            // }
 
         }
 
