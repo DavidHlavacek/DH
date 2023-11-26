@@ -45,9 +45,10 @@ const Main = () => {
                         idx={1}
                     />
                 </h1>
-                <p>Hi, there!</p>
-                <p>Here I showcase all the services I offer.</p>
-                <p>Please click on the tabs you are interested in!</p>
+                <p>Do you want a <b>website</b> for your business?</p>
+                <p>Or do you need a <b>reservation system</b> for your company?</p>
+                <p>Maybe you just have an <b>app</b> in mind?</p>
+                <p>Click on the other tabs to make your dream come true!</p>
             </div>
         </div>
     )
