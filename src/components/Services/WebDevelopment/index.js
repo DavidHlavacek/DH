@@ -24,7 +24,7 @@ const Main = () => {
                     />
                 </h1>
                 <div className="paragraphs-container">
-                    <p>- Web Design</p>
+                    <p>- Website Design & Development</p>
                     <p>- Fullstack Development (Front-End/Back-End)</p>
                     <p>- Web Application Development (SPA/PWA)</p>
                     <p>- Responsive Design for ALL devices</p>
