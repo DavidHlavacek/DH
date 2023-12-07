@@ -162,7 +162,7 @@
 
             
             @supports (-webkit-touch-callout: none) {
-                margin-bottom: 100px;            
+                // margin-bottom: 100px;            
             }
 
             @media screen and (max-height: 600px),
@@ -552,7 +552,7 @@
             // margin: 0;
             margin-bottom: 20px;
             @supports (-webkit-touch-callout: none) {
-                margin-bottom: 100px;
+                // margin-bottom: 100px;
             }
 
             // margin-top: auto;  // Add this line to make the ul stick to the bottom

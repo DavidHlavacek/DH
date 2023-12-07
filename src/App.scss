@@ -2,13 +2,13 @@ $primary-color: #ffd700;
 
 @supports (-webkit-touch-callout: none) {
   .styles-main {
-    flex: 1;
+    // flex: 1;
     
   }
   .styles-container {
-    flex: 1;
+    // flex: 1;
     background-color: #022c43;
-    align-items: center;
+    // align-items: center;
   }
   /* CSS specific to iOS devices */ 
 }
