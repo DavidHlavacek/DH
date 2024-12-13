@@ -40,7 +40,7 @@ const Sidebar = () => {
             <nav>
                 <div className='top-nav'>
                     <NavLink exact="true" activeclassname="active" to="/">
-                        <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+                        <FontAwesomeIcon icon={faHome}/>
                     </NavLink>
                     <NavLink
                         exact="true"
@@ -48,7 +48,7 @@ const Sidebar = () => {
                         className="about-link"
                         to="/about"
                     >
-                        <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+                        <FontAwesomeIcon icon={faUser}/>
                     </NavLink>
                 </div>
                 <div className='middle-nav'>
@@ -89,7 +89,7 @@ const Sidebar = () => {
                         className="education-link"
                         to="/education"
                     >
-                        <SchoolIcon color='#4d4d4e' />
+                        <SchoolIcon />
                     </NavLink>
                     <NavLink
                         exact="true"
@@ -97,7 +97,7 @@ const Sidebar = () => {
                         className="work-link"
                         to="/work"
                     >
-                        <WorkIcon color='#4d4d4e' />
+                        <WorkIcon />
                     </NavLink>
                 </div>
                 <div className='contact-nav'>
@@ -107,7 +107,7 @@ const Sidebar = () => {
                         className="contact-link"
                         to="/contact"
                     >
-                        <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+                        <FontAwesomeIcon icon={faEnvelope} />
                     </NavLink>
                 </div>
             </nav>
@@ -119,7 +119,7 @@ const Sidebar = () => {
                         rel="noreferrer"
                         href="https://www.linkedin.com/in/davihlav/"
                     >
-                        <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
+                        <FontAwesomeIcon icon={faLinkedin}/>
                     </a>
                 </li>
                 <li key="github">
@@ -128,7 +128,7 @@ const Sidebar = () => {
                         rel="noreferrer"
                         href="https://github.com/DavidHlavacek"
                     >
-                        <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
+                        <FontAwesomeIcon icon={faGithub} />
                     </a>
                 </li>
             </ul>

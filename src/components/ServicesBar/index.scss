@@ -1,15 +1,15 @@
 .tab-bar-extension {
     height: 100%;
     flex-grow: 1;
-    background-color: #011a27;
-    border-top: 5px solid #000;
-    border-bottom: 5px solid #000;/* Add border similar to other tabs */
+    background-color: rgba(15, 15, 35, 0.85);
+    border-top: 5px solid rgba(20, 20, 40, 0.9);
+    border-bottom: 5px solid rgba(20, 20, 40, 0.9);/* Add border similar to other tabs */
 }
 
 .vertical-line {
     height: 100dvh;
     width: 5px;
-    background-color: #000;
+    background-color: rgba(20, 20, 40, 0.9);
   }
     .projectBar-container {
         position: absolute;
@@ -20,7 +20,7 @@
         height: 15%;
         top: 3px;
         bottom: 0;
-        background: #011a27;
+        background: rgba(15, 15, 35, 0.85);
         width: 90%;
         
         
@@ -180,7 +180,7 @@
         
 
         .projectContainer {
-            border-top: 5px solid #000; // Add this line for the bottom border
+            border-top: 5px solid rgba(20, 20, 40, 0.9); // Add this line for the bottom border
 
             //     h-full
             //   flex
@@ -194,7 +194,7 @@
             //   text-lg
             //   font-medium
             //   text-gray-300
-            border-bottom: 5px solid #000; // Add this line for the bottom border
+            border-bottom: 5px solid rgba(20, 20, 40, 0.9); // Add this line for the bottom border
 
             height: 100%;
             display: flex;
@@ -206,20 +206,33 @@
             
 
             &:hover {
-                background-color: #022c43;
-                color: #ffd700;
+                background-color: rgba(35, 35, 65, 0.95);
+                color: #a7a7cf;
+                box-shadow: inset 0 0 15px rgba(137, 137, 255, 0.15);
+            }
+
+            svg {
+                // w-6 ml-4 hover:bg-gray-600 hover:rounded
+                width: 20px;
+                margin-left: 15px;
+                margin-right: 15px;
+                &:hover {
+                    background-color: rgba(137, 137, 255, 0.15);
+                    color: #a7a7cf;
+                    border-radius: 5px;
+                }            
             }
         }
 
         .activeProjectContainer {
-            border-top: 6.5px solid #000; // Add this line for the bottom border 
+            border-top: 6.5px solid rgba(20, 20, 40, 0.9); // Add this line for the bottom border 
             &:nth-child(3) {
-                border-right: 1px solid #000;   
-                border-left: 1px solid #000;   
+                border-right: 1px solid rgba(20, 20, 40, 0.9);   
+                border-left: 1px solid rgba(20, 20, 40, 0.9);   
             } 
             &:nth-child(4) {
-                border-right: 1px solid #000;   
-                border-left: 1px solid #000;   
+                border-right: 1px solid rgba(20, 20, 40, 0.9);   
+                border-left: 1px solid rgba(20, 20, 40, 0.9);   
             } 
 
             border-bottom: none; // Add this line for the bottom border
@@ -241,12 +254,21 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            background: #022c43;
+            background: rgba(35, 35, 65, 0.95);
+            box-shadow: inset 0 0 20px rgba(137, 137, 255, 0.2);
             cursor: pointer;
             font-size: 30px;
 
             &:hover {
-                color: #ffd700;
+                color: #a7a7cf;
+            }
+
+            .x-button {
+                opacity: 0.8;
+                &:hover {
+                    opacity: 1;
+                    color: #a7a7cf;
+                }
             }
         }
     }

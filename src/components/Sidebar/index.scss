@@ -1,6 +1,6 @@
 .nav-bar {
     position: relative;
-    background: #181818;
+    background: rgba(10, 10, 25, 0.8);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -61,23 +61,29 @@
         transition: top 0.5s ease-in-out, transform 0.5s ease-in-out;
         z-index: 4;
 
-
         .bar {
             width: 50px;
             height: 6px;
-            background-color: #4d4d4e;
+            background-color: rgba(137, 137, 255, 0.3);
+            box-shadow: 0 0 10px rgba(137, 137, 255, 0.1);
             margin: 8px 0;
-            transition: background-color 0.4s;
+            transition: all 0.4s ease;
 
             @media screen and (max-width: 800px) {
                 width: 25px;
                 height: 3px;
                 margin: 4px 0;
             }
+
+            &:hover {
+                background-color: rgba(137, 137, 255, 0.5);
+                box-shadow: 0 0 15px rgba(137, 137, 255, 0.2);
+            }
         }
 
         &:hover .bar {
-            background-color: #E65100;
+            background-color: rgba(137, 137, 255, 0.5);
+            box-shadow: 0 0 20px rgba(137, 137, 255, 0.3);
         }
     }
 
@@ -105,17 +111,23 @@
                 font-size: 15px;
                 line-height: 16px;
                 transition: color 0.3s ease;
+                color: rgba(137, 137, 255, 0.3);
 
                 svg {
                     height: 25px;
+                    color: rgba(137, 137, 255, 0.3);
 
                     @media screen and (max-width: 800px) {
                         height: 20px;
                     }
+
+                    &:hover {
+                        color: rgba(137, 137, 255, 0.7);
+                    }
                 }
 
                 &:hover svg {
-                    color: #ffd700;
+                    color: rgba(137, 137, 255, 0.7);
                 }
             }
         }
@@ -173,7 +185,8 @@
         }
 
         .bar {
-            background-color: #E65100;
+            background-color: rgba(137, 137, 255, 0.7);
+            box-shadow: 0 0 25px rgba(137, 137, 255, 0.4);
         }
     }
 
@@ -250,7 +263,7 @@
                 display: block;
                 width: 80%;
                 height: 1.5px;
-                background-color: #4d4d4e;
+                background-color: #2a2a40;
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
@@ -433,18 +446,18 @@
         .contact-nav {
             a {
                 font-size: 22px;
-                color: #4d4d4e;
+                color: rgba(137, 137, 255, 0.3);
                 display: block;
                 position: relative;
                 text-decoration: none;
 
                 svg {
                     .path1 {
-                        fill: #4d4d4e;
+                        fill: rgba(137, 137, 255, 0.3); // Update default color
                     }
 
                     .path2 {
-                        fill: #4d4d4e;
+                        fill: rgba(137, 137, 255, 0.3); // Update default color
                     }
                 }
 
@@ -458,7 +471,7 @@
                 }
 
                 &:hover {
-                    color: #ffd700;
+                    color: rgba(137, 137, 255, 0.7);
 
                     svg {
                         opacity: 0;
@@ -547,17 +560,22 @@
 
             a.active {
                 svg {
-                    color: #ffd700;
-                    fill: #ffd700;
-
-                    .path1 {
-                        fill: #E65100;
-                    }
-
-                    .path2 {
-                        fill: #FFA000;
+                    color: rgba(137, 137, 255, 0.7) !important;
+                    
+                    .path1, .path2 {
+                        fill: rgba(137, 137, 255, 0.7) !important;
                     }
                 }
+            }
+        }
+    }
+
+    a:hover {
+        svg {
+            color: rgba(137, 137, 255, 0.7) !important;
+            
+            .path1, .path2 {
+                fill: rgba(137, 137, 255, 0.7) !important;
             }
         }
     }
