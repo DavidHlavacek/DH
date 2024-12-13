@@ -1,6 +1,11 @@
+// Variables
+$nav-color: rgba(137, 137, 255, 0.3);
+$nav-color-hover: rgba(137, 137, 255, 0.7);
+$nav-bg: rgba(10, 10, 25, 0.8);
+
 .nav-bar {
     position: relative;
-    background: rgba(10, 10, 25, 0.8);
+    background: $nav-bg;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -8,599 +13,435 @@
     justify-content: flex-start;
     top: 0;
     z-index: 3;
-    margin-top: 0;
+    perspective: 1500px;
+    transform-style: preserve-3d;
 
+    // Logo styles
     .logo {
         position: absolute;
         top: 45%;
         transform: translateY(-50%);
-        transition: top 0.5s ease-in-out, transform 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
         z-index: 4;
 
         img {
             display: block;
             margin: 8px auto;
-            width: 70px;
+            width: 90px;  // Increased from 70px
             height: auto;
 
-            @media screen and (max-width: 800px) {
-                width: 40px;
-            }
-
-            @media screen and (max-width: 550px) {
-                width: 38px;
-            }
-
-            @media screen and (max-width: 450px) {
-                width: 30px;
-            }
-
             &.sub-logo {
-                width: 80px;
+                width: 100px;  // Increased from 80px
+            }
+        }
 
-                @media screen and (max-width: 800px) {
-                    width: 50px;
-                }
+        @media screen and (max-width: 800px) {
+            img { 
+                width: 50px;  // Increased from 40px
+                &.sub-logo { width: 60px; }  // Increased from 50px
+            }
+        }
 
-                @media screen and (max-width: 550px) {
-                    width: 48px;
-                }
-
-                @media screen and (max-width: 450px) {
-                    width: 40px;
-                }
+        @media screen and (max-width: 450px) {
+            img { 
+                width: 40px;  // Increased from 30px
+                &.sub-logo { width: 50px; }  // Increased from 40px
             }
         }
     }
 
+    // Burger menu styles
     .burger-menu {
         position: absolute;
         top: 55%;
         cursor: pointer;
         transform: translateY(-50%);
-        transition: top 0.5s ease-in-out, transform 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
         z-index: 4;
 
         .bar {
-            width: 50px;
-            height: 6px;
-            background-color: rgba(137, 137, 255, 0.3);
+            width: 70px;    // Increased from 60px
+            height: 10px;   // Increased from 8px
+            background-color: $nav-color;
             box-shadow: 0 0 10px rgba(137, 137, 255, 0.1);
-            margin: 8px 0;
+            margin: 12px 0; // Increased from 10px
             transition: all 0.4s ease;
 
             @media screen and (max-width: 800px) {
-                width: 25px;
-                height: 3px;
-                margin: 4px 0;
+                width: 45px;   // Increased from 35px
+                height: 5px;   // Increased from 4px
+                margin: 8px 0; // Increased from 6px
             }
+        }
 
-            &:hover {
-                background-color: rgba(137, 137, 255, 0.5);
+        &:hover {
+            .bar {
+                background-color: $nav-color-hover;
                 box-shadow: 0 0 15px rgba(137, 137, 255, 0.2);
             }
         }
-
-        &:hover .bar {
-            background-color: rgba(137, 137, 255, 0.5);
-            box-shadow: 0 0 20px rgba(137, 137, 255, 0.3);
-        }
     }
 
-    ul {
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        width: 100%;
-        justify-content: center;
-        gap: 10px;
-        padding: 0;
-        list-style: none;
-        text-align: center;
-        margin: 0;
-        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-
-        @media screen and (min-width: 801px) {
-            display: flex;
-        }
-
-        li {
-            a {
-                padding: 7px 0;
-                display: block;
-                font-size: 15px;
-                line-height: 16px;
-                transition: color 0.3s ease;
-                color: rgba(137, 137, 255, 0.3);
-
-                svg {
-                    height: 25px;
-                    color: rgba(137, 137, 255, 0.3);
-
-                    @media screen and (max-width: 800px) {
-                        height: 20px;
-                    }
-
-                    &:hover {
-                        color: rgba(137, 137, 255, 0.7);
-                    }
-                }
-
-                &:hover svg {
-                    color: rgba(137, 137, 255, 0.7);
-                }
-            }
-        }
-    }
-
-    &.menu-open {
-        .logo {
-            top: 20px; 
-            transform: translateY(0); 
-        }
-
-        .burger-menu {
-            top: 110px; 
-            transform: translateY(0); 
-        }
-
-        nav {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-            display: flex;
-        }
-
-        ul {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .top-nav,
-        .bot-nav,
-        .contact-nav {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .middle-nav {
-            opacity: 1;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-            animation: slideIn 0.9s ease-out forwards;
-        }
-
-        .top-nav {
-            animation: slideIn 0.5s ease-out forwards;
-        }
-
-        .bot-nav {
-            animation: slideIn 0.7s ease-out forwards;
-        }
-
-        .contact-nav {
-            animation: slideIn 0.8s ease-out forwards;
-        }
-
-        .bar {
-            background-color: rgba(137, 137, 255, 0.7);
-            box-shadow: 0 0 25px rgba(137, 137, 255, 0.4);
-        }
-    }
-
-    &.menu-closed {
-        .logo {
-            top: 45%;
-            transform: translateY(-50%);
-        }
-
-        .burger-menu {
-            top: 55%;
-            transform: translateY(-50%);
-        }
-
-        nav {
-            opacity: 1; 
-            transform: translateY(-20px);
-            transition: transform 0.5s ease-in-out;
-            display: flex;
-        }
-
-        ul {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .middle-nav {
-            animation: slideOut 0.9s ease-in-out forwards; 
-            animation-fill-mode: forwards;
-        }
-
-        .top-nav,
-        .bot-nav,
-        .contact-nav {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        &.menu-closed nav {
-            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
-
+    // Navigation styles
     nav {
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
         display: flex;
         flex-flow: column nowrap;
-        flex-basis: 80%;
-        text-align: center;
+        flex-basis: 90%;  // Increased from 80% to push content lower
         width: 100%;
-        overflow: hidden;
         justify-content: center;
+        text-align: center;
+        padding-top: 50px;  // Decreased from 60px
 
-        .top-nav,
-        .middle-nav,
-        .bot-nav,
-        .contact-nav {
+        .top-nav, .middle-nav, .bot-nav, .contact-nav {
             opacity: 0;
             transform: translateY(20px);
-        }
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+            margin: 25px 0;  // Add spacing between nav sections
 
-        .top-nav,
-        .middle-nav,
-        .bot-nav,
-        .contact-nav {
-            &:not(:last-child)::after {
-                content: '';
-                display: block;
-                width: 80%;
-                height: 1.5px;
-                background-color: #2a2a40;
+            a {
                 position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-
-                @media screen and (max-height: 600px),
-                (max-width: 800px) {
-                    display: none;
-                }
-            }
-
-            svg {
-                height: 2rem !important;
-                width: auto;
-            }
-        }
-
-        .top-nav {
-            &::before {
-                content: '';
-                display: block;
-                margin-bottom: 10px;
-                width: 80%;
-                height: 1px;
-                background-color: #4d4d4e;
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-
-                @media screen and (max-height: 600px),
-                (max-width: 800px) {
-                    display: none;
-                }
-            }
-
-            margin-bottom: 18px;
-            margin-top: 15px;
-
-            svg {
-                height: 30px !important;
-                width: auto;
-            }
-
-            @media screen and (max-height: 600px),
-            (max-width: 800px) {
-                svg {
-                    height: 1.3rem !important;
-                    width: auto;
-                }
-
-                margin: 0px;
-            }
-        }
-
-        .middle-nav {
-            margin-bottom: 0px;
-
-            svg {
-                height: 3.2rem !important;
-                width: auto;
-            }
-
-            @media screen and (max-height: 600px),
-            (max-width: 800px) {
-                svg {
-                    height: 1.6rem !important;
-                    width: auto;
-                }
-
-                margin: 0px;
-            }
-        }
-
-        .bot-nav {
-            margin-top: 15px;
-
-            svg {
-                height: 2.5rem !important;
-                width: auto;
-            }
-
-            @media screen and (max-height: 600px),
-            (max-width: 800px) {
-                svg {
-                    height: 1.3rem !important;
-                    width: auto;
-                }
-
-                margin: 0px;
-            }
-        }
-
-        .contact-nav {
-            margin-top: 0px;
-
-            svg {
-                height: 35px !important;
-                width: auto;
-            }
-
-            @media screen and (max-height: 782px) {
-                // margin-top: 15px;
-            }
-
-            @media screen and (max-height: 600px),
-            (max-width: 800px) {
-                svg {
-                    height: 1.3rem !important;
-                    width: auto;
-                }
-
-                margin: 0px;
-            }
-        }
-
-        .top-nav,
-        .middle-nav,
-        .bot-nav,
-        .contact-nav {
-            a {
-                height: 66px;
-
-                @media screen and (max-height: 600px),
-                (max-width: 800px) {
-                    height: 57px;
-                }
-            }
-        }
-
-        .top-nav {
-            a {
-                line-height: 66px;
-
-                @media screen and (max-height: 600px),
-                (max-width: 800px) {
-                    line-height: 50px;
-                }
-            }
-        }
-
-        .middle-nav {
-            a {
-                line-height: 83px;
-
-                @media screen and (max-height: 600px),
-                (max-width: 800px) {
-                    line-height: 65px;
-                }
-            }
-        }
-
-        .bot-nav {
-            a {
-                line-height: 75px;
-
-                @media screen and (max-height: 600px),
-                (max-width: 800px) {
-                    line-height: 58px;
-
-                    &:last-of-type {
-                        line-height: 62px;
-                    }
-                }
-            }
-        }
-
-        .contact-nav {
-            a {
-                line-height: 72px;
-
-                @media screen and (max-height: 600px),
-                (max-width: 800px) {
-                    line-height: 57px;
-                }
-            }
-        }
-
-        .top-nav,
-        .middle-nav,
-        .bot-nav,
-        .contact-nav {
-            a {
+                height: 75px;  // Increase height for better spacing
                 font-size: 22px;
-                color: rgba(137, 137, 255, 0.3);
+                color: $nav-color;
                 display: block;
-                position: relative;
-                text-decoration: none;
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
                 svg {
-                    .path1 {
-                        fill: rgba(137, 137, 255, 0.3); // Update default color
-                    }
-
-                    .path2 {
-                        fill: rgba(137, 137, 255, 0.3); // Update default color
-                    }
-                }
-
-                @media screen and (max-height: 600px),
-                (max-width: 800px) {
-                    font-size: 10px;
-                }
-
-                i {
-                    transition: all 0.3s ease-out;
+                    height: 3.2rem !important;  // Decreased from 3.5rem
+                    width: 3.2rem !important;   // Decreased from 3.5rem
                 }
 
                 &:hover {
-                    color: rgba(137, 137, 255, 0.7);
+                    color: $nav-color-hover;
+                    transform: translateZ(25px) scale(1.15);
+                    text-shadow: 0 0 20px rgba(137, 137, 255, 0.6);
+                }
 
-                    svg {
+                &.active svg {
+                    color: $nav-color-hover !important;
+                    
+                    .path1, .path2 {
+                        fill: $nav-color-hover !important;
+                    }
+                }
+
+                &[data-tooltip] {
+                    &:before {
+                        content: attr(data-tooltip);
+                        position: absolute;
+                        left: 105%;  // Changed from 120% to 105%
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: rgba(0, 0, 0, 0.8);
+                        color: #fff;
+                        padding: 4px 8px;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        white-space: nowrap;
                         opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.3s ease;
+                        transform-origin: left center;
                     }
 
-                    &:after {
+                    &:hover:before {
                         opacity: 1;
+                        visibility: visible;
+                        transform: translateY(-50%) scale(1);
                     }
                 }
 
-                &:after {
+                @media screen and (max-height: 600px), (max-width: 800px) {
+                    height: 60px;
                     font-size: 10px;
-                    letter-spacing: 2px;
-                    position: absolute;
-                    bottom: 0;
-                    display: block;
-                    width: 100%;
-                    text-align: center;
-                    opacity: 0;
-                    transition: all 0.3s ease-out;
+                    svg {
+                        height: 2.5rem !important;  // Increased from 2rem
+                        width: 2.5rem !important;   // Increased from 2rem
+                    }
+                    &[data-tooltip]:before {
+                        font-size: 12px;
+                        padding: 3px 6px;
+                    }
+                }
+            }
+        }
 
-                    @media screen and (max-height: 600px),
-                    (max-width: 800px) {
-                        letter-spacing: 0px;
-                        font-size: 6px;
+        .nav-separator {
+            width: 30px;
+            height: 2px;
+            background: $nav-color;
+            margin: 15px auto;
+            position: relative;
+            overflow: hidden;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: $nav-color-hover;
+                left: -100%;
+                transition: all 0.5s ease;
+            }
+
+            &:hover::after {
+                left: 0;
+            }
+
+            @media screen and (max-height: 600px), (max-width: 800px) {
+                width: 20px;
+                height: 1px;
+                margin: 10px auto;
+            }
+        }
+
+        .middle-nav {
+            a {
+                svg {
+                    height: 4.5rem !important;
+                    width: 4.5rem !important;
+                    fill: $nav-color;
+                    transition: all 0.3s ease;
+
+                    .path1, .path2 {
+                        fill: $nav-color;
+                        transition: fill 0.3s ease;
                     }
                 }
 
-                &:first-child {
-                    &::after {
-                        content: 'HOME';
-                        font-weight: 500;
-
-                        @media screen and (max-height: 600px),
-                        (max-width: 800px) {
-                            line-height: 75px;
+                &:hover {
+                    svg {
+                        fill: $nav-color-hover;
+                        .path1, .path2 {
+                            fill: $nav-color-hover;
                         }
                     }
                 }
-            }
 
-            a.about-link {
-                &:after {
-                    content: 'ABOUT';
-                    font-weight: 500;
-
-                    @media screen and (max-height: 600px),
-                    (max-width: 800px) {
-                        line-height: 75px;
-                    }
-                }
-            }
-
-            a.services-link {
-                &:after {
-                    content: 'SERVICES';
-                    font-weight: 500;
-
-                    @media screen and (max-height: 600px),
-                    (max-width: 800px) {
-                        line-height: 66px;
-                    }
-                }
-            }
-
-            a.education-link {
-                &:after {
-                    content: 'EDUCATION';
-                    font-weight: 500;
-                }
-            }
-
-            a.work-link {
-                &:after {
-                    content: 'WORK';
-                    font-weight: 500;
-                }
-            }
-
-            a.contact-link {
-                &:after {
-                    content: 'CONTACT';
-                    font-weight: 500;
-                }
-            }
-
-            a.active {
-                svg {
-                    color: rgba(137, 137, 255, 0.7) !important;
-                    
+                &.active svg {
                     .path1, .path2 {
-                        fill: rgba(137, 137, 255, 0.7) !important;
+                        fill: $nav-color-hover !important;
+                    }
+                }
+
+                @media screen and (max-height: 600px), (max-width: 800px) {
+                    svg {
+                        height: 2.3rem !important;
+                        width: 2.3rem !important;
                     }
                 }
             }
         }
-    }
 
-    a:hover {
-        svg {
-            color: rgba(137, 137, 255, 0.7) !important;
-            
-            .path1, .path2 {
-                fill: rgba(137, 137, 255, 0.7) !important;
+        .bot-nav {
+            a {
+                &.education-link svg {
+                    height: 3.7rem !important;
+                    width: 3.7rem !important;
+                }
+
+                &.work-link svg {
+                    height: 3.5rem !important;
+                    width: 3.5rem !important;
+                }
+
+                @media screen and (max-height: 600px), (max-width: 800px) {
+                    &.education-link svg {
+                        height: 2.3rem !important;
+                        width: 2.3rem !important;
+                    }
+                    &.work-link svg {
+                        height: 2.2rem !important;
+                        width: 2.2rem !important;
+                    }
+                }
             }
         }
+
+        .contact-nav {
+            a {
+                svg {
+                    height: 3.2rem !important;
+                    width: 3.2rem !important;
+                }
+
+                @media screen and (max-height: 600px), (max-width: 800px) {
+                    svg {
+                        height: 2.1rem !important;
+                        width: 2.1rem !important;
+                    }
+                }
+            }
+        }
+
+        &.closing {
+            .top-nav { animation: fadeOutUp 0.3s forwards; }
+            .middle-nav { animation: fadeOutRight 0.3s forwards; }
+            .bot-nav { animation: fadeOutLeft 0.3s forwards; }
+            .contact-nav { animation: fadeOutDown 0.3s forwards; }
+            .nav-separator { animation: fadeOut 0.2s forwards; }
+        }
     }
 
-    // Animation keyframes for opening
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(1000px);
+    // Menu states
+    &.menu-open {
+        .logo { top: 20px; transform: translateY(0); }
+        .burger-menu { 
+            top: 140px;  // Increased from 110px to create more space from logo
+            transform: translateY(0); 
         }
-        to {
+        
+        nav {
             opacity: 1;
-            transform: translateY(100px);
+            visibility: visible;
+
+            .top-nav { animation: morphInFromTop 0.7s cubic-bezier(0.2, 0.8, 0.2, 1.2) forwards; }
+            .middle-nav { animation: morphInFromRight 0.9s cubic-bezier(0.2, 0.8, 0.2, 1.2) forwards; }
+            .bot-nav { animation: morphInFromLeft 1.1s cubic-bezier(0.2, 0.8, 0.2, 1.2) forwards; }
+            .contact-nav { animation: morphInFromBottom 1.3s cubic-bezier(0.2, 0.8, 0.2, 1.2) forwards; }
         }
     }
 
-    // Animation keyframes for closing (reverse)
-    @keyframes slideOut {
-        from {
-            opacity: 1;
-            transform: translateY(0);
+    &.menu-closing {
+        .logo { 
+            animation: slideBackUp 0.5s forwards;
+            animation-delay: 0.3s; // Delay until nav items fade out
         }
-        to {
-            opacity: 0;
-            transform: translateY(20px);
+        .burger-menu { 
+            animation: slideBackDown 0.5s forwards;
+            animation-delay: 0.3s; // Delay until nav items fade out
         }
+        
+        nav {
+            opacity: 1; // Keep nav visible during animation
+            visibility: visible;
+            .top-nav { animation: morphOutToTop 0.3s forwards; }
+            .middle-nav { animation: morphOutToRight 0.3s forwards; }
+            .bot-nav { animation: morphOutToLeft 0.3s forwards; }
+            .contact-nav { animation: morphOutToBottom 0.3s forwards; }
+            .nav-separator { animation: fadeOut 0.2s forwards; }
+        }
+    }
+
+    // Social links
+    ul {
+        position: absolute;
+        bottom: 12px;  // Changed from 15px to lower the social icons
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 13px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        z-index: 5;
+
+        a {
+            color: $nav-color;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $nav-color-hover;
+            }
+
+            svg {
+                height: 30px;  // Increased from 25px
+                @media screen and (max-width: 800px) {
+                    gap: 0;
+                    height: 20px;  // Increased from 20px
+                }
+            }
+        }
+
+        .menu-open & {
+            bottom: 8px;  // Changed from 5px
+        }
+    }
+
+    // Essential animations
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+    @keyframes morphInFromTop {
+        0% { transform: translate3d(0, -300px, -200px) rotateX(60deg); opacity: 0; }
+        100% { transform: translate3d(0, 0, 0) rotateX(0); opacity: 1; }
+    }
+
+    @keyframes morphInFromRight {
+        0% { transform: translateX(300px) rotateY(-90deg); opacity: 0; }
+        100% { transform: translateX(0) rotateY(0); opacity: 1; }
+    }
+
+    @keyframes morphInFromLeft {
+        0% { transform: translateX(-300px) rotateZ(-90deg); opacity: 0; }
+        100% { transform: translateX(0) rotateZ(0); opacity: 1; }
+    }
+
+    @keyframes morphInFromBottom {
+        0% { transform: translateY(300px) scale(0.1); opacity: 0; }
+        100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeOutUp {
+        from { opacity: 1; transform: translateY(0); }
+        to { opacity: 0; transform: translateY(-20px); }
+    }
+
+    @keyframes fadeOutRight {
+        from { opacity: 1; transform: translateX(0); }
+        to { opacity: 0; transform: translateX(20px); }
+    }
+
+    @keyframes fadeOutLeft {
+        from { opacity: 1; transform: translateX(0); }
+        to { opacity: 0; transform: translateX(-20px); }
+    }
+
+    @keyframes fadeOutDown {
+        from { opacity: 1; transform: translateY(0); }
+        to { opacity: 0; transform: translateY(20px); }
+    }
+
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+
+    @keyframes slideBackUp {
+        from { top: 20px; }
+        to { top: 45%; transform: translateY(-50%); }
+    }
+
+    @keyframes slideBackDown {
+        from { top: 110px; }
+        to { top: 55%; transform: translateY(-50%); }
+    }
+
+    @keyframes morphOutToTop {
+        0% { transform: translate3d(0, 0, 0) rotateX(0); opacity: 1; }
+        100% { transform: translate3d(0, -300px, -200px) rotateX(60deg); opacity: 0; }
+    }
+
+    @keyframes morphOutToRight {
+        0% { transform: translateX(0) rotateY(0); opacity: 1; }
+        100% { transform: translateX(300px) rotateY(-90deg); opacity: 0; }
+    }
+
+    @keyframes morphOutToLeft {
+        0% { transform: translateX(0) rotateZ(0); opacity: 1; }
+        100% { transform: translateX(-300px) rotateZ(-90deg); opacity: 0; }
+    }
+
+    @keyframes morphOutToBottom {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateY(300px) scale(0.1); opacity: 0; }
     }
 }
