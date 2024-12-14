@@ -16,7 +16,6 @@ $nav-bg: rgba(10, 10, 25, 0.8);
     perspective: 1500px;
     transform-style: preserve-3d;
 
-    // Logo styles
     .logo {
         position: absolute;
         top: 45%;
@@ -27,30 +26,22 @@ $nav-bg: rgba(10, 10, 25, 0.8);
         img {
             display: block;
             margin: 8px auto;
-            width: 90px;  // Increased from 70px
+            width: 90px;
             height: auto;
 
             &.sub-logo {
-                width: 100px;  // Increased from 80px
+                width: 100px;
             }
         }
 
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 768px) {
             img { 
-                width: 50px;  // Increased from 40px
-                &.sub-logo { width: 60px; }  // Increased from 50px
-            }
-        }
-
-        @media screen and (max-width: 450px) {
-            img { 
-                width: 40px;  // Increased from 30px
-                &.sub-logo { width: 50px; }  // Increased from 40px
+                width: 40px;
+                &.sub-logo { visibility: hidden; }
             }
         }
     }
 
-    // Burger menu styles
     .burger-menu {
         position: absolute;
         top: 55%;
@@ -60,17 +51,17 @@ $nav-bg: rgba(10, 10, 25, 0.8);
         z-index: 4;
 
         .bar {
-            width: 70px;    // Increased from 60px
-            height: 10px;   // Increased from 8px
+            width: 70px;
+            height: 10px;
             background-color: $nav-color;
             box-shadow: 0 0 10px rgba(137, 137, 255, 0.1);
-            margin: 12px 0; // Increased from 10px
+            margin: 12px 0;
             transition: all 0.4s ease;
 
-            @media screen and (max-width: 800px) {
-                width: 35px;   // Decreased from 45px
-                height: 4px;   // Decreased from 5px
-                margin: 4px 0; // Decreased from 6px
+            @media screen and (max-width: 768px) {
+                width: 30px;
+                height: 4px;
+                margin: 4px 0;
             }
         }
 
@@ -82,7 +73,6 @@ $nav-bg: rgba(10, 10, 25, 0.8);
         }
     }
 
-    // Navigation styles
     nav {
         opacity: 0;
         visibility: hidden;
@@ -90,29 +80,30 @@ $nav-bg: rgba(10, 10, 25, 0.8);
         transition: all 0.5s ease-in-out;
         display: flex;
         flex-flow: column nowrap;
-        flex-basis: 90%;  // Increased from 80% to push content lower
+        flex-basis: 90%;
         width: 100%;
         justify-content: center;
         text-align: center;
-        padding-top: 50px;  // Decreased from 60px
+        // padding-top: 50px;
+        padding-bottom: 50px; // Add this line to add equal vertical space
 
         .top-nav, .middle-nav, .bot-nav, .contact-nav {
             opacity: 0;
             transform: translateY(20px);
             position: relative;
             animation: float 3s ease-in-out infinite;
-            margin: 0;  // Remove individual margins
+            // margin: 20px 0; // Adjust this line to add equal vertical space
 
             a {
                 position: relative;
-                // font-size: 22px;
                 color: $nav-color;
                 display: block;
                 transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                margin: 20px 0; // Add this line to add vertical space between individual icons
 
                 svg {
-                    height: 3.2rem;  // Universal size for all icons
-                    width: 3.2rem;   // Universal size for all icons
+                    height: 4rem;  // Increased from 3.2rem
+                    width: 4rem;   // Increased from 3.2rem
                 }
 
                 &:hover {
@@ -129,7 +120,7 @@ $nav-bg: rgba(10, 10, 25, 0.8);
                     &:before {
                         content: attr(data-tooltip);
                         position: absolute;
-                        left: 105%;  // Changed from 120% to 105%
+                        left: 105%;
                         top: 50%;
                         transform: translateY(-50%);
                         background: rgba(0, 0, 0, 0.8);
@@ -150,16 +141,15 @@ $nav-bg: rgba(10, 10, 25, 0.8);
                     }
                 }
 
-                @media screen and (max-height: 600px), (max-width: 800px) {
-                    // height: 40px;  // Decreased from 50px
-                    // font-size: 12px;  // Decreased from 14px
+                @media screen and (max-height: 600px), (max-width: 768px) {
+                    margin: 10px 0;
                     svg {
-                        height: 1.2rem;  // Universal size for all icons
-                        width: 1.2rem;   // Universal size for all icons
+                        height: 1.8rem;
+                        width: 1.8rem;
                     }
                     &[data-tooltip]:before {
-                        font-size: 10px;      // Decreased from 10px
-                        padding: 1px 3px;  // Decreased from 2px 4px
+                        font-size: 10px;
+                        padding: 1px 3px;
                     }
                 }
             }
@@ -169,7 +159,7 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             width: 30px;
             height: 2px;
             background: $nav-color;
-            margin: 10px auto;  // Universal margin for even spacing
+            margin: 10px auto;
             position: relative;
             overflow: hidden;
             
@@ -187,20 +177,27 @@ $nav-bg: rgba(10, 10, 25, 0.8);
                 left: 0;
             }
 
-            @media screen and (max-height: 600px), (max-width: 800px) {
-                width: 10px;  // Decreased from 15px
+            @media screen and (max-width: 768px) {
+                width: 10px;
                 height: 1px;
-                margin: 5px auto;  // Universal margin for even spacing
+                margin: 5px auto;
             }
+        }
+
+        @media screen and (max-width: 768px) {
+            transform: translateY(80px);
         }
     }
 
-    // Menu states
     &.menu-open {
         .logo { top: 20px; transform: translateY(0); }
         .burger-menu { 
-            top: 140px;  // Increased from 110px to create more space from logo
+            top: 140px;
             transform: translateY(0); 
+
+            @media screen and (max-width: 768px) {
+                top: 100px;
+            }
         }
         
         nav {
@@ -217,15 +214,15 @@ $nav-bg: rgba(10, 10, 25, 0.8);
     &.menu-closing {
         .logo { 
             animation: slideBackUp 0.5s forwards;
-            animation-delay: 0.3s; // Delay until nav items fade out
+            animation-delay: 0.3s;
         }
         .burger-menu { 
             animation: slideBackDown 0.5s forwards;
-            animation-delay: 0.3s; // Delay until nav items fade out
+            animation-delay: 0.3s;
         }
         
         nav {
-            opacity: 1; // Keep nav visible during animation
+            opacity: 1;
             visibility: visible;
             .top-nav { animation: morphOutToTop 0.3s forwards; }
             .middle-nav { animation: morphOutToRight 0.3s forwards; }
@@ -235,10 +232,9 @@ $nav-bg: rgba(10, 10, 25, 0.8);
         }
     }
 
-    // Social links
-    ul {
+    .social-links {
         position: absolute;
-        bottom: 12px;  // Changed from 15px to lower the social icons
+        bottom: 12px;
         left: 0;
         width: 100%;
         display: flex;
@@ -258,24 +254,20 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             }
 
             svg {
-                height: 30px;  // Universal size for all icons
-                @media screen and (max-width: 800px) {
-                    gap: 0;
-                    height: 12px;  // Universal size for all icons
+                height: 2rem;  // Increased from 30px
+                width: 2rem;
+                @media screen and (max-width: 768px) {
+                    height: 1rem;
+                    width: 1rem;
                 }
             }
         }
 
-        .menu-open & {
-            bottom: 8px;  // Changed from 5px
-        }
-
-        @media screen and (max-width: 800px) {
-            gap: 3px;  // Decreased from 5px
+        @media screen and (max-width: 768px) {
+            gap: 3px;
         }
     }
 
-    // Essential animations
     @keyframes float {  
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-5px); }

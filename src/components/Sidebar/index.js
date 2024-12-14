@@ -1,7 +1,7 @@
-import { Link, NavLink } from 'react-router-dom'
-import './index.scss'
-import Logo from '../../assets/images/logo.png'
-import LogoSubtitle from '../../assets/images/logo_sub.png'
+import { Link, NavLink } from 'react-router-dom';
+import './index.scss';
+import Logo from '../../assets/images/logo.png';
+import LogoSubtitle from '../../assets/images/logo_sub.png';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import CodeIcon from '@mui/icons-material/Code';
@@ -10,11 +10,9 @@ import SchoolIcon from '@mui/icons-material/School';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
-import { useState } from 'react'
+import { useState } from 'react';
 
 const Sidebar = () => {
-
     const [menuOpen, setMenuOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
 
@@ -24,7 +22,7 @@ const Sidebar = () => {
             setTimeout(() => {
                 setMenuOpen(false);
                 setIsClosing(false);
-            }, 800); // Increased to account for full animation sequence
+            }, 800);
         } else {
             setMenuOpen(true);
             setIsClosing(false);
@@ -48,85 +46,47 @@ const Sidebar = () => {
                         <NavLink exact="true" activeclassname="active" to="/" data-tooltip="HOME">
                             <HomeIcon />
                         </NavLink>
-                        <NavLink
-                            exact="true"
-                            activeclassname="active"
-                            className="about-link"
-                            to="/about"
-                            data-tooltip="ABOUT"
-                        >
+                        <NavLink exact="true" activeclassname="active" className="about-link" to="/about" data-tooltip="ABOUT">
                             <PersonIcon />
                         </NavLink>
                     </div>
                     <div className="nav-separator"></div>
                     <div className='middle-nav'>
-                        <NavLink
-                            exact="true"
-                            activeclassname="active"
-                            className="services-link"
-                            to="/services"
-                            data-tooltip="SERVICES"
-                        >
+                        <NavLink exact="true" activeclassname="active" className="services-link" to="/services" data-tooltip="SERVICES">
                             <CodeIcon />
                         </NavLink>
                     </div>
                     <div className="nav-separator"></div>
                     <div className='bot-nav'>
-                        <NavLink
-                            exact="true"
-                            activeclassname="active"
-                            className="education-link"
-                            to="/education"
-                            data-tooltip="EDUCATION"
-                        >
+                        <NavLink exact="true" activeclassname="active" className="education-link" to="/education" data-tooltip="EDUCATION">
                             <SchoolIcon />
                         </NavLink>
-                        <NavLink
-                            exact="true"
-                            activeclassname="active"
-                            className="work-link"
-                            to="/work"
-                            data-tooltip="WORK"
-                        >
+                        <NavLink exact="true" activeclassname="active" className="work-link" to="/work" data-tooltip="WORK">
                             <WorkIcon />
                         </NavLink>
                     </div>
                     <div className="nav-separator"></div>
                     <div className='contact-nav'>
-                        <NavLink
-                            exact="true"
-                            activeclassname="active"
-                            className="contact-link"
-                            to="/contact"
-                            data-tooltip="CONTACT"
-                        >
+                        <NavLink exact="true" activeclassname="active" className="contact-link" to="/contact" data-tooltip="CONTACT">
                             <EmailIcon />
                         </NavLink>
                     </div>
                 </nav>
             )}
-            <ul>
+            <ul className="social-links">
                 <li key="linkedin">
-                    <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://www.linkedin.com/in/davihlav/"
-                    >
+                    <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/davihlav/">
                         <LinkedInIcon />
                     </a>
                 </li>
                 <li key="github">
-                    <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://github.com/DavidHlavacek"
-                    >
+                    <a target="_blank" rel="noreferrer" href="https://github.com/DavidHlavacek">
                         <GitHubIcon />
                     </a>
                 </li>
             </ul>
         </div>
     );
-}
+};
 
 export default Sidebar;
