@@ -1,5 +1,4 @@
-
-    .services-container {
+.services-container {
         width: 75%;
         will-change: contents;
         height: 90%;
@@ -197,6 +196,19 @@
   
     
   }
-  
-  
+
+.services-webdev {
+    .text-zone {
+        h1 {
+            margin-bottom: 40px;
+        }
+        
+        .paragraphs-container {
+            height: auto;
+            max-height: none;
+        }
+    }
+}
+
+
 
