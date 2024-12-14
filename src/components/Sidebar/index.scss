@@ -68,9 +68,9 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             transition: all 0.4s ease;
 
             @media screen and (max-width: 800px) {
-                width: 45px;   // Increased from 35px
-                height: 5px;   // Increased from 4px
-                margin: 8px 0; // Increased from 6px
+                width: 35px;   // Decreased from 45px
+                height: 4px;   // Decreased from 5px
+                margin: 4px 0; // Decreased from 6px
             }
         }
 
@@ -101,19 +101,18 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             transform: translateY(20px);
             position: relative;
             animation: float 3s ease-in-out infinite;
-            margin: 25px 0;  // Add spacing between nav sections
+            margin: 0;  // Remove individual margins
 
             a {
                 position: relative;
-                height: 75px;  // Increase height for better spacing
-                font-size: 22px;
+                // font-size: 22px;
                 color: $nav-color;
                 display: block;
                 transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
                 svg {
-                    height: 3.2rem !important;  // Decreased from 3.5rem
-                    width: 3.2rem !important;   // Decreased from 3.5rem
+                    height: 3.2rem;  // Universal size for all icons
+                    width: 3.2rem;   // Universal size for all icons
                 }
 
                 &:hover {
@@ -123,11 +122,7 @@ $nav-bg: rgba(10, 10, 25, 0.8);
                 }
 
                 &.active svg {
-                    color: $nav-color-hover !important;
-                    
-                    .path1, .path2 {
-                        fill: $nav-color-hover !important;
-                    }
+                    color: $nav-color-hover;
                 }
 
                 &[data-tooltip] {
@@ -146,7 +141,6 @@ $nav-bg: rgba(10, 10, 25, 0.8);
                         opacity: 0;
                         visibility: hidden;
                         transition: all 0.3s ease;
-                        transform-origin: left center;
                     }
 
                     &:hover:before {
@@ -157,15 +151,15 @@ $nav-bg: rgba(10, 10, 25, 0.8);
                 }
 
                 @media screen and (max-height: 600px), (max-width: 800px) {
-                    height: 60px;
-                    font-size: 10px;
+                    // height: 40px;  // Decreased from 50px
+                    // font-size: 12px;  // Decreased from 14px
                     svg {
-                        height: 2.5rem !important;  // Increased from 2rem
-                        width: 2.5rem !important;   // Increased from 2rem
+                        height: 1.2rem;  // Universal size for all icons
+                        width: 1.2rem;   // Universal size for all icons
                     }
                     &[data-tooltip]:before {
-                        font-size: 12px;
-                        padding: 3px 6px;
+                        font-size: 10px;      // Decreased from 10px
+                        padding: 1px 3px;  // Decreased from 2px 4px
                     }
                 }
             }
@@ -175,7 +169,7 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             width: 30px;
             height: 2px;
             background: $nav-color;
-            margin: 15px auto;
+            margin: 10px auto;  // Universal margin for even spacing
             position: relative;
             overflow: hidden;
             
@@ -194,97 +188,10 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             }
 
             @media screen and (max-height: 600px), (max-width: 800px) {
-                width: 20px;
+                width: 10px;  // Decreased from 15px
                 height: 1px;
-                margin: 10px auto;
+                margin: 5px auto;  // Universal margin for even spacing
             }
-        }
-
-        .middle-nav {
-            a {
-                svg {
-                    height: 4.5rem !important;
-                    width: 4.5rem !important;
-                    fill: $nav-color;
-                    transition: all 0.3s ease;
-
-                    .path1, .path2 {
-                        fill: $nav-color;
-                        transition: fill 0.3s ease;
-                    }
-                }
-
-                &:hover {
-                    svg {
-                        fill: $nav-color-hover;
-                        .path1, .path2 {
-                            fill: $nav-color-hover;
-                        }
-                    }
-                }
-
-                &.active svg {
-                    .path1, .path2 {
-                        fill: $nav-color-hover !important;
-                    }
-                }
-
-                @media screen and (max-height: 600px), (max-width: 800px) {
-                    svg {
-                        height: 2.3rem !important;
-                        width: 2.3rem !important;
-                    }
-                }
-            }
-        }
-
-        .bot-nav {
-            a {
-                &.education-link svg {
-                    height: 3.7rem !important;
-                    width: 3.7rem !important;
-                }
-
-                &.work-link svg {
-                    height: 3.5rem !important;
-                    width: 3.5rem !important;
-                }
-
-                @media screen and (max-height: 600px), (max-width: 800px) {
-                    &.education-link svg {
-                        height: 2.3rem !important;
-                        width: 2.3rem !important;
-                    }
-                    &.work-link svg {
-                        height: 2.2rem !important;
-                        width: 2.2rem !important;
-                    }
-                }
-            }
-        }
-
-        .contact-nav {
-            a {
-                svg {
-                    height: 3.2rem !important;
-                    width: 3.2rem !important;
-                }
-
-                @media screen and (max-height: 600px), (max-width: 800px) {
-                    svg {
-                        height: 2.1rem !important;
-                        width: 2.1rem !important;
-                    }
-                }
-            }
-        }
-
-        &.closing {
-            .top-nav { animation: fadeOutUp 0.3s forwards; }
-            .middle-nav { animation: fadeOutRight 0.3s forwards; }
-            .bot-nav { animation: fadeOutLeft 0.3s forwards; }
-            .contact-nav { animation: fadeOutDown 0.3s forwards; }
-            .nav-separator { animation: fadeOut 0.2s forwards; }
         }
     }
 
@@ -351,10 +258,10 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             }
 
             svg {
-                height: 30px;  // Increased from 25px
+                height: 30px;  // Universal size for all icons
                 @media screen and (max-width: 800px) {
                     gap: 0;
-                    height: 20px;  // Increased from 20px
+                    height: 12px;  // Universal size for all icons
                 }
             }
         }
@@ -362,10 +269,14 @@ $nav-bg: rgba(10, 10, 25, 0.8);
         .menu-open & {
             bottom: 8px;  // Changed from 5px
         }
+
+        @media screen and (max-width: 800px) {
+            gap: 3px;  // Decreased from 5px
+        }
     }
 
     // Essential animations
-    @keyframes float {
+    @keyframes float {  
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-5px); }
     }
