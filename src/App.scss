@@ -1,17 +1,17 @@
 $primary-color: #ffd700;
 
-@supports (-webkit-touch-callout: none) {
-  .styles-main {
-    // flex: 1;
+// @supports (-webkit-touch-callout: none) {
+//   .styles-main {
+//     // flex: 1;
     
-  }
-  .styles-container {
-    // flex: 1;
-    background-color: #022c43;
-    // align-items: center;
-  }
-  /* CSS specific to iOS devices */ 
-}
+//   }
+//   .styles-container {
+//     // flex: 1;
+//     background-color: #022c43;
+//     // align-items: center;
+//   }
+//   /* CSS specific to iOS devices */ 
+// }
 // @supports not (-webkit-touch-callout: none) {
 //   /* CSS for other than iOS devices */ 
 //   .styles-main {
