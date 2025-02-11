@@ -1,5 +1,4 @@
-
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './index.scss';
 
 const StarBackground = () => {
@@ -8,8 +7,21 @@ const StarBackground = () => {
     const mouseRef = useRef({ x: 0, y: 0 });
     const isMovingRef = useRef(false);
     const movingTimeoutRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Effect to detect mobile viewport
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
+        if (isMobile) return;
+
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
         let animationFrameId;
@@ -54,33 +66,27 @@ const StarBackground = () => {
             
             starsRef.current.forEach(star => {
                 if (isMovingRef.current) {
-                    // Mouse moving behavior - parallax effect
                     const dx = mouseRef.current.x - canvas.width / 2;
                     const dy = mouseRef.current.y - canvas.height / 2;
                     star.x -= dx * 0.002 * star.parallaxFactor;
                     star.y -= dy * 0.002 * star.parallaxFactor;
                 } else {
-                    // Idle behavior - gentle movement and mouse attraction
                     const dx = mouseRef.current.x - star.x;
                     const dy = mouseRef.current.y - star.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    
+
                     if (distance < 200) {
-                        // Orbit around mouse when close
                         const angle = Math.atan2(dy, dx);
                         star.x += Math.cos(angle) * (distance * 0.001);
                         star.y += Math.sin(angle) * (distance * 0.001);
                     } else {
-                        // Random movement when far
                         star.x += star.speedX;
                         star.y += star.speedY;
                     }
                 }
 
-                // Rotation
                 star.rotation += star.rotationSpeed;
 
-                // Screen wrapping
                 if (star.x < 0) star.x = canvas.width;
                 if (star.x > canvas.width) star.x = 0;
                 if (star.y < 0) star.y = canvas.height;
@@ -117,9 +123,9 @@ const StarBackground = () => {
             window.removeEventListener('mousemove', handleMouseMove);
             cancelAnimationFrame(animationFrameId);
         };
-    }, []);
+    }, [isMobile]);
 
-    return <canvas ref={canvasRef} className="star-background" />;
+    return isMobile ? <div className="star-background"></div> : <canvas className="star-background" ref={canvasRef} />;
 };
 
 export default StarBackground;

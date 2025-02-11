@@ -13,8 +13,19 @@
     height: 100dvh;
     margin: 0;
     width: 100%; // Set the width to 90% to match the second column
+    margin-left: -50px;  /* push pages more to left */
+    margin-top: -20px;   /* push pages upward */
     @media screen and (max-height: 600px), (max-width: 800px) {
         width: 100%; // Adjust as needed for smaller screens
+    }
+}
+
+// Add mobile overrides
+@media screen and (max-width: 768px) {
+    .page {
+        margin-left: -20px;  /* slightly less negative margin on mobile */
+        margin-top: -20px;
+        padding-bottom: 80px; /* space to avoid fixed bottom sidebar overlap */
     }
 }
 

@@ -1,14 +1,20 @@
 .under-construction {
   position: absolute;
+  z-index: 1001;
   top: 30%;
   left: 30%;
 
   .UnderConstruction-social-networks {
     width: 50%;
+
+    @media screen and (max-width: 700px) {
+      top: 85%;
+    }
+
   }
 
   @media screen and (max-width: 700px) {
-    left: 18%;
+    left: 15%;
   }
 
   .buttonYN {

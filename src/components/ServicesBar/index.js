@@ -45,7 +45,7 @@ const ServicesBar = ({ showPage, setShowPage }) => {
     return (
         <>
             <div className="page-container">
-            <div className="vertical-line"></div>
+            {/* <div className="vertical-line"></div> */}
 
                 <div className="projectBar-container">
                     {['Main', 'Web Development', 'Software Development', 'Projects'].map((page, index, array) =>

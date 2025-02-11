@@ -47,6 +47,7 @@
     }
 
     .portfolio-section {
+        height: 60%;
         margin-top: 4rem;
         
         h2 {
@@ -71,5 +72,9 @@
         .service-category {
             padding: 1rem;
         }
+
+        height: calc(100dvh - 60px);
+        overflow-y: auto;
+        padding-bottom: 20px;
     }
 }

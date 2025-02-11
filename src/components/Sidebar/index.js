@@ -10,38 +10,56 @@ import SchoolIcon from '@mui/icons-material/School';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Sidebar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const mobile = window.innerWidth <= 768;
+            setIsMobile(mobile);
+            if (mobile) {
+                setMenuOpen(true);
+                setIsClosing(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const toggleMenu = () => {
-        if (menuOpen) {
-            setIsClosing(true);
-            setTimeout(() => {
-                setMenuOpen(false);
+        if (!isMobile) {
+            if (menuOpen) {
+                setIsClosing(true);
+                setTimeout(() => {
+                    setMenuOpen(false);
+                    setIsClosing(false);
+                }, 800);
+            } else {
+                setMenuOpen(true);
                 setIsClosing(false);
-            }, 800);
-        } else {
-            setMenuOpen(true);
-            setIsClosing(false);
+            }
         }
     };
 
     return (
-        <div className={`nav-bar ${menuOpen ? 'menu-open' : ''} ${isClosing ? 'menu-closing' : ''}`}>
+        <div className={`nav-bar${!isMobile ? (menuOpen ? ' menu-open' : '') + (isClosing ? ' menu-closing' : '') : ''}`}>
             <Link className="logo" to="/">
                 <img src={Logo} alt="logo" />
                 <img className="sub-logo" src={LogoSubtitle} alt="David Hlavacek" />
             </Link>
-            <div className="burger-menu" onClick={toggleMenu}>
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-            </div>
-            {(menuOpen || isClosing) && (
-                <nav className={isClosing ? 'closing' : ''}>
+            {!isMobile && (
+                <div className="burger-menu" onClick={toggleMenu}>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                </div>
+            )}
+            {(menuOpen || isClosing || isMobile) && (
+                <nav className={isClosing && !isMobile ? 'closing' : ''}>
                     <div className='top-nav'>
                         <NavLink exact="true" activeclassname="active" to="/" data-tooltip="HOME">
                             <HomeIcon />

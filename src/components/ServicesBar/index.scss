@@ -21,7 +21,9 @@
         top: 3px;
         bottom: 0;
         background: rgba(15, 15, 35, 0.85);
-        width: 90%;
+        left: 0;
+        right: 0;
+        width: 100%;
         
         
         
@@ -272,3 +274,21 @@
             }
         }
     }
+
+/* Force .projectBar-container to span full width on normal screens */
+.projectBar-container {
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+/* Adjust .projectBar-container for normal screens so it starts at the end of the left sidebar and left-aligns its tabs */
+@media screen and (min-width: 769px) {
+    .projectBar-container {
+        left: 10% !important;
+        width: 90% !important;
+        justify-content: flex-start !important;
+        padding-left: 0 !important;
+    }
+}
