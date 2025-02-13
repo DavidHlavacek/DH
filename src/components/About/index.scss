@@ -2,7 +2,7 @@
         width: 50%;
         height: 100%;
         /* Set the height to 50% for each cube to align them vertically */
-        top: 10%;
+        top: 20%;
         padding-top: 0;
         margin-left: 0;
         position: absolute;
@@ -10,7 +10,7 @@
         // overflow: hidden;
 
         &:nth-child(2) {
-            top: 50%;
+            top: 60%;
             /* Set the top to 50% for the second cube to position it below the first */
         }
 
@@ -23,25 +23,14 @@
             }
         }
 
-        @media screen and (max-width: 800px) {
-
-            top: 92%;
+        @media screen and (max-width: 800px), (-webkit-touch-callout: none) {
+            width: 30%;
+            top: 80%;
             left: 15%;
 
             &:nth-child(2) {
-                top: 72%;
-                /* Set the top to 50% for the second cube to position it below the first */
-            }
-
-
-        }
-
-        @supports (-webkit-touch-callout: none) {
-            top: 70%;
-
-            &:nth-child(2) {
-                top: 90%;
-                /* Set the top to 50% for the second cube to position it below the first */
+                top: 80%;
+                left: 55%;
             }
         }
 

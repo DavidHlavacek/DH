@@ -6,10 +6,18 @@ import './index.scss';
 import PulsatingParagraphs from '../../utils/PulsatingParagraphs';
 
 const Layout = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isMobile, setIsMobile] = useState(
+        window.innerWidth <= 800 || 
+        window.innerHeight <= 800 || 
+        (CSS.supports && CSS.supports('-webkit-touch-callout', 'none'))
+    );
 
     useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        const handleResize = () => setIsMobile(
+            window.innerWidth <= 800 || 
+            window.innerHeight <= 800 || 
+            (CSS.supports && CSS.supports('-webkit-touch-callout', 'none'))
+        );
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);

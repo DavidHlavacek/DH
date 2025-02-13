@@ -21,11 +21,13 @@
             position: absolute;
             left: 5%;
             top: 5%;
-            width: 100%;
             vertical-align: middle;
             height: 70%; /* Set a fixed height for the container */
             z-index: 1;
-            
+
+            @media screen and (min-height: 801px) and (min-width: 801px) {
+                width: 100%;
+            }
             // @media screen and (min-width: 1000px) {
             //     left: 9%;
                 

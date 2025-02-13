@@ -15,11 +15,11 @@ import { useState, useEffect } from 'react';
 const Sidebar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 800 || window.innerHeight <= 800);
 
     useEffect(() => {
         const handleResize = () => {
-            const mobile = window.innerWidth <= 768;
+            const mobile = window.innerWidth <= 800 || window.innerHeight <= 800;
             setIsMobile(mobile);
             if (mobile) {
                 setMenuOpen(true);

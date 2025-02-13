@@ -21,9 +21,10 @@
         top: 3px;
         bottom: 0;
         background: rgba(15, 15, 35, 0.85);
-        left: 0;
-        right: 0;
-        width: 100%;
+        left: 10% !important;
+        right: 0 !important;
+        margin: 0 !important;
+        width: 90% !important;
         
         
         
@@ -277,17 +278,17 @@
 
 /* Force .projectBar-container to span full width on normal screens */
 .projectBar-container {
-    left: 0 !important;
+    left: 10% !important;
     right: 0 !important;
     margin: 0 !important;
-    width: 100% !important;
+    width: 90% !important;
 }
 
-/* Adjust .projectBar-container for normal screens so it starts at the end of the left sidebar and left-aligns its tabs */
-@media screen and (min-width: 769px) {
+/* Adjust .projectBar-container for mobile/small screens */
+@media screen and (max-width: 800px), (max-height: 800px), (-webkit-touch-callout: none) {
     .projectBar-container {
-        left: 10% !important;
-        width: 90% !important;
+        left: 0 !important;
+        width: 100% !important;
         justify-content: flex-start !important;
         padding-left: 0 !important;
     }

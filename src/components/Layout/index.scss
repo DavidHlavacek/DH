@@ -76,22 +76,26 @@
 .about-page,
 .contact-page {
     width: 70%;
+
+    @media screen and (max-width: 800px), (-webkit-touch-callout: none) {
+        width: 85%;
+    }
+
     .text-zone {
-        
-        position: relative;
-        left: 0%;
+        position: absolute;
+        left: 10%;
         top: 50%;
-        transform: translateY(10%);
+        transform: translateY(-50%);
         width: 50%;
         vertical-align: middle;
         display: table-cell;
         max-height: 90%;
         z-index: 1;
 
-        @media screen and (max-width: 500px) {
-            left: 0%;
+        @media screen and (max-width: 800px), (-webkit-touch-callout: none) {
+            width: 85%;
+            left: 5%;
         }
-
 
         h1 {
             font-size: 70px;

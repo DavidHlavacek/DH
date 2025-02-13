@@ -34,7 +34,7 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             }
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 800px), (-webkit-touch-callout: none) {
             img { 
                 width: 40px;
                 &.sub-logo { visibility: hidden; }
@@ -58,7 +58,7 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             margin: 12px 0;
             transition: all 0.4s ease;
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 800px), (-webkit-touch-callout: none) {
                 width: 30px;
                 height: 4px;
                 margin: 4px 0;
@@ -100,8 +100,13 @@ $nav-bg: rgba(10, 10, 25, 0.8);
                 margin: 20px 0; // Add this line to add vertical space between individual icons
 
                 svg {
-                    height: 4rem;  // Increased from 3.2rem
-                    width: 4rem;   // Increased from 3.2rem
+                    height: 3.8rem;  // Increased from 3.2rem
+                    width: 3.8rem;   // Increased from 3.2rem
+
+                    @media screen and (max-height: 1000px), (-webkit-touch-callout: none) {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                    }
                 }
 
                 &:hover {
@@ -139,12 +144,8 @@ $nav-bg: rgba(10, 10, 25, 0.8);
                     }
                 }
 
-                @media screen and (max-height: 600px), (max-width: 768px) {
+                @media screen and (max-height: 800px), (-webkit-touch-callout: none) {
                     margin: 10px 0;
-                    svg {
-                        height: 1.8rem;
-                        width: 1.8rem;
-                    }
                     &[data-tooltip]:before {
                         font-size: 10px;
                         padding: 1px 3px;
@@ -175,14 +176,14 @@ $nav-bg: rgba(10, 10, 25, 0.8);
                 left: 0;
             }
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 800px), (-webkit-touch-callout: none) {
                 width: 10px;
                 height: 1px;
                 margin: 5px auto;
             }
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 800px), (-webkit-touch-callout: none) {
             transform: translateY(80px);
         }
     }
@@ -193,7 +194,7 @@ $nav-bg: rgba(10, 10, 25, 0.8);
             top: 140px;
             transform: translateY(0); 
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 800px), (-webkit-touch-callout: none) {
                 top: 100px;
             }
         }
@@ -348,7 +349,7 @@ $nav-bg: rgba(10, 10, 25, 0.8);
 }
 
 /* APPENDED MOBILE STYLES */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px), (max-height: 800px), (-webkit-touch-callout: none) {
     .nav-bar {
         position: fixed !important;
         top: auto !important;
@@ -379,32 +380,19 @@ $nav-bg: rgba(10, 10, 25, 0.8);
         transform: none !important;
         transition: none !important;
     }
-    .nav-bar nav .top-nav,
-    .nav-bar nav .middle-nav,
-    .nav-bar nav .bot-nav,
-    .nav-bar nav .contact-nav {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: center !important;
-        animation: none !important;
-        transform: none !important;
-        opacity: 1 !important;
-        margin: 0;
-    }
-    .nav-bar nav .nav-separator {
-        display: none;
+    .nav-bar nav > div {
+        display: contents !important;
     }
     .nav-bar nav a {
-        display: inline-flex !important;
+        display: flex !important;
+        flex: 1 1 0% !important;
+        justify-content: center !important;
+        align-items: center !important;
         margin: 0 !important;
+        text-align: center !important;
     }
     .nav-bar nav a[data-tooltip]:before,
     .nav-bar nav a[data-tooltip]:hover:before {
         display: none !important;
-    }
-    .nav-bar nav .top-nav a:not(:last-child),
-    .nav-bar nav .bot-nav a:not(:last-child) {
-         margin-right: 20px !important;
     }
 }
