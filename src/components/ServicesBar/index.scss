@@ -284,8 +284,8 @@
     width: 90% !important;
 }
 
-/* Adjust .projectBar-container for normal screens so it starts at the end of the left sidebar and left-aligns its tabs */
-@media screen and (max-width: 800px), (-webkit-touch-callout: none) {
+/* Adjust .projectBar-container for mobile screens so it starts at the end of the left sidebar and left-aligns its tabs */
+@media screen and (max-width: 800px), (max-height: 800px), (-webkit-touch-callout: none) {
     .projectBar-container {
         left: 0 !important;
         width: 100% !important;

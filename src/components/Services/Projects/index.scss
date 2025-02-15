@@ -1,0 +1,181 @@
+.portfolio-container {
+    box-sizing: border-box;
+    position: absolute;
+    top: 250px; /* Start below the fixed services bar, pushed lower further */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    padding: 3rem 2rem 6rem 2rem;
+
+    @media screen and (max-width: 800px), (max-height: 800px), (-webkit-touch-callout: none) {
+        padding: 2rem 1rem 4rem 1rem;
+        top: 80px;
+    }
+
+    h1 {
+        color: #ffd700;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        font-family: 'Coolvetica';
+
+        @media screen and (max-width: 800px), (max-height: 800px), (-webkit-touch-callout: none) {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .portfolio-section {
+        margin-bottom: 3rem;
+
+        &:last-child {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            color: #ffd700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Cascadia';
+        }
+
+        .section-description {
+            color: #fff;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+    }
+
+    .project-swiper {
+        width: 100%;
+        padding: 2rem;
+
+        @media screen and (max-width: 800px), (max-height: 800px), (-webkit-touch-callout: none) {
+            left: -25px;
+        }
+
+        .swiper-slide {
+            width: 400px;
+            height: 500px;
+
+            @media screen and (max-width: 800px), (max-height: 800px), (-webkit-touch-callout: none) {
+                width: 250px;
+                height: 350px;
+            }
+        }
+
+        .swiper-button-prev, .swiper-button-next {
+            color: #ffd700;
+            
+            @media screen and (max-width: 800px), (max-height: 800px), (-webkit-touch-callout: none) {
+                display: none !important;
+            }
+        }
+
+        // Bring the navigation arrows closer together
+        .swiper-button-prev {
+            left: calc(50% - 600px) !important;
+        }
+        .swiper-button-next {
+            left: calc(50% + 600px) !important;
+        }
+
+        .swiper-pagination-bullet {
+            background: #ffd700;
+        }
+    }
+
+    .project-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 1rem;
+        
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        @media screen and (min-width: 801px), (min-height: 801px) {
+            height: 90%;
+        }
+
+        .project-image {
+            height: 50%;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .project-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                color: #ffd700;
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                font-family: 'Cascadia';
+            }
+
+            p {
+                color: #fff;
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+                flex: 1;
+            }
+
+            .project-technologies {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+
+                .tech-tag {
+                    background: rgba(255, 215, 0, 0.2);
+                    color: #ffd700;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 15px;
+                    font-size: 0.8rem;
+                }
+            }
+
+            a {
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: #ffd700;
+                color: #333;
+                text-decoration: none;
+                border-radius: 5px;
+                text-align: center;
+                transition: all 0.3s ease;
+                font-family: 'Cascadia';
+
+                &:hover {
+                    background: #fff;
+                }
+
+                &.disabled-link {
+                    background: #666;
+                    cursor: not-allowed;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .portfolio-container {
+        left: 10% !important;
+        width: 90% !important;
+    }
+} 
