@@ -9,8 +9,7 @@ const ServicesBar = ({ showPage, setShowPage }) => {
     const [hidePage, setHidePage] = useState([])
 
     useEffect(() => {
-        // Set the first tab as the initially selected tab
-        setShowPage('Main')
+        // Don't set Main as default here - let the parent component handle this based on URL
     }, []) // Empty dependency array ensures this effect runs only once on mount
 
     const handleTabClick = (page) => {
@@ -89,7 +88,6 @@ const ServicesBar = ({ showPage, setShowPage }) => {
             </div>
             <Loader type="cube-transition" />
         </>
-
     )
 }
 

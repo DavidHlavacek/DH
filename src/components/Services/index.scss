@@ -178,30 +178,16 @@
   
 .services-softwaredev {
     .text-zone {
-      
-        
-        
         h1 {
-            font-size: 60px;
-            @media screen and (max-width: 1140px) {
-                font-size: 23px;
-            }
-        }
-
-        p {
-          
-            @media screen and (max-width: 1140px) {
-                font-size: 13.5px;
-            }
-  
-            
+            margin-bottom: 40px;
         }
         
-  
+        .paragraphs-container {
+            height: auto;
+            max-height: none;
+        }
     }
-  
-    
-  }
+}
 
 .services-webdev {
     .text-zone {

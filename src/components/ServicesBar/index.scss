@@ -15,7 +15,7 @@
         position: absolute;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start !important;
         flex-direction: row;
         height: 15%;
         top: 3px;
@@ -282,6 +282,7 @@
     right: 0 !important;
     margin: 0 !important;
     width: 90% !important;
+    padding-left: 0 !important;
 }
 
 /* Adjust .projectBar-container for mobile screens so it starts at the end of the left sidebar and left-aligns its tabs */

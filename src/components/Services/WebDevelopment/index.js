@@ -67,7 +67,7 @@ const Main = () => {
                     <h2>Featured Projects</h2>
                     <div className="projects-grid">
                         {/* Project cards will go here */}
-                        <p className="coming-soon">Portfolio section coming soon...</p>
+                        <p className="coming-soon">Check Projects tab...</p>
                     </div>
                 </div>
             </div>

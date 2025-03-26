@@ -16,11 +16,15 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
-              <Route path="services" element={<Services />} />
+              <Route path="services/*" element={<Services />}>
+                <Route index element={null} />
+                <Route path="web-development" element={null} />
+                <Route path="software-development" element={null} />
+                <Route path="projects" element={null} />
+              </Route>
               <Route path="contact" element={<Contact />} />
               <Route path="education" element={<UnderConstructionPage />} />
               <Route path="work" element={<UnderConstructionPage />} />
-
             </Route>
           </Routes>
         </div>

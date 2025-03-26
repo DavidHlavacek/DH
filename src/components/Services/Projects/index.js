@@ -8,13 +8,14 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
 import './index.scss'
+// Import videos
+import restaurantVideo from '../../../assets/images/projects/petrzalskajedalen.webm'
+import horizonVideo from '../../../assets/images/projects/myhorizon2.webm'
+import memecoinVideo from '../../../assets/images/projects/memecoin.webm'
 
 const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const pageTitle = [
-        'M',
-        'y',
-        ' ',
         'P',
         'r',
         'o',
@@ -31,13 +32,26 @@ const Projects = () => {
             description: "Web development projects showcasing responsive design and modern technologies.",
             projects: [
                 {
-                    title: "Coming Soon",
-                    description: "More websites are in development.",
-                    image: "../../../assets/images/projects/portfolio.png",
-                    link: "#",
-                    technologies: ["React", "SCSS", "JavaScript"]
+                    title: "Memecoin Website",
+                    description: "A cryptocurrency website for a community-driven memecoin project with roadmap, tokenomics and team information.",
+                    image: memecoinVideo,
+                    link: "https://memecoin-website.com/",
+                    technologies: ["NextJS", "Animation", "Responsive Design"]
+                },
+                {
+                    title: "Petržalská Jedáleň",
+                    description: "A modern restaurant website for a canteen in Petržalka, focusing on affordable and nutritious meals.",
+                    image: restaurantVideo,
+                    link: "https://petrzalskajedalen.sk/",
+                    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"]
+                },
+                {
+                    title: "MyHorizon²",
+                    description: "A creative agency website showcasing digital design services, brand identity, and app development solutions.",
+                    image: horizonVideo,
+                    link: "https://www.myhorizon2.com/",
+                    technologies: ["HTML", "CSS", "JavaScript", "Animation", "Responsive Design"]
                 }
-                // Add more website projects
             ]
         },
         {
@@ -105,14 +119,22 @@ const Projects = () => {
                             slideShadows: true,
                         }}
                         pagination={{ clickable: true }}
-                        navigation={true}
+                        navigation={false}
                         className="project-swiper"
                     >
                         {category.projects.map((project, projectIndex) => (
                             <SwiperSlide key={projectIndex}>
                                 <div className="project-card">
                                     <div className="project-image">
-                                        <img src={project.image} alt={project.title} />
+                                            <video 
+                                                src={project.image} 
+                                                autoPlay 
+                                                loop 
+                                                muted 
+                                                playsInline
+                                                title={project.title}
+                                                className="project-video"
+                                            />
                                     </div>
                                     <div className="project-info">
                                         <h3>{project.title}</h3>
